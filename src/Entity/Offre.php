@@ -35,7 +35,7 @@ class Offre
     private $descriptionOffre;
 
     /**
-     * @ORM\OneToMany(targetEntity=reponseOffre::class, mappedBy="offre", orphanRemoval=true)
+     * @ORM\OneToMany(targetEntity=ReponseOffre::class, mappedBy="offre", orphanRemoval=true)
      */
     private $reponseOffre;
 

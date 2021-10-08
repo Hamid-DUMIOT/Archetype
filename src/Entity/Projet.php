@@ -40,13 +40,13 @@ class Projet
     private $dateFin;
 
     /**
-     * @ORM\ManyToOne(targetEntity=user::class, inversedBy="projets")
+     * @ORM\ManyToOne(targetEntity=User::class, inversedBy="projets")
      * @ORM\JoinColumn(nullable=false)
      */
     private $user;
 
     /**
-     * @ORM\OneToMany(targetEntity=devis::class, mappedBy="projet", orphanRemoval=true)
+     * @ORM\OneToMany(targetEntity=Devis::class, mappedBy="projet", orphanRemoval=true)
      */
     private $devis;
 
