@@ -1,19 +1,7 @@
-# HAMIDDUMIOT
+# ArcheType
 
-Le projet ArcheType est un site d'un cabinet d'architecte.
+website ArcheType
 
-## Environnement de développement
-
-### Pré-requis
-PHP 8.0.10
-Composer 
-Symfony 5 
-Docker
-Docker-compose
-
-# On peut verifier tout cela avec : symfony check:requirements
-
-### Run l'environnement de dev
-
-docker-compose up -d
-symfony serve -d
+ArcheType est un site web pour la cabinet d'architecte du même nom. Vous pourrez voir nos créations ainsi que vous connecter afin de réaliser un devis en ligne. 
+De plus, découvrez notre rubrique blog pour lire nos derniers articles. Enfin, la rubrique offre d'emploi dans laquelle nous publierons d'éventuelles propositions 
+d'emploi auxquelles vous pourrez postuler via un formulaire.
