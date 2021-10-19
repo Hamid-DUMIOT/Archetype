@@ -14,7 +14,7 @@ class MainController extends AbstractController
      */
     public function index()
     {
-        return $this->render(view: 'home/index.html.twig');
+        return $this->render('home/index.html.twig');
     }
 
 
@@ -26,10 +26,10 @@ class MainController extends AbstractController
     public function Inscription(Request $request)
     {
 
-        $prenom = $request->get(key: 'prenom');
+        $prenom = $request->get('prenom');
 
         return $this->render(
-            view: 'home/inscription.html.twig'
+            'home/inscription.html.twig'
         );
     }
 }
