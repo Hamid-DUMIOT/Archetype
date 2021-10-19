@@ -1,0 +1,8 @@
+.navbar-brand-img {
+    max-height: 2.4rem;
+    width: auto;
+}
+
+img, svg {
+    vertical-align: middle;
+}
