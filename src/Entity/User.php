@@ -7,6 +7,7 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Component\Form\FormTypeInterface;
 
 /**
  * @ORM\Entity(repositoryClass=UserRepository::class)
@@ -23,7 +24,7 @@ class User implements UserInterface
     /**
      * @ORM\Column(type="string", length=180, unique=true)
      */
-    private $uuid;
+    private $email;
 
     /**
      * @ORM\Column(type="json")
@@ -58,7 +59,7 @@ class User implements UserInterface
 
     /**
      * @ORM\ManyToOne(targetEntity=Publication::class, inversedBy="users")
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\JoinColumn(nullable=true)
      */
     private $publication;
 
@@ -72,14 +73,14 @@ class User implements UserInterface
         return $this->id;
     }
 
-    public function getUuid(): ?string
+    public function getEmail(): ?string
     {
-        return $this->uuid;
+        return $this->email;
     }
 
-    public function setUuid(string $uuid): self
+    public function setEmail(string $email): self
     {
-        $this->uuid = $uuid;
+        $this->email = $email;
 
         return $this;
     }
@@ -91,7 +92,7 @@ class User implements UserInterface
      */
     public function getUsername(): string
     {
-        return (string) $this->uuid;
+        return (string) $this->email;
     }
 
     /**
