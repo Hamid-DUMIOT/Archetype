@@ -17,6 +17,10 @@
 				<td>{{ publication.contenuPub }}</td>
 			</tr>
 			<tr>
+				<th>Titre</th>
+				<td>{{ publication.titre ? }}</td>
+			</tr>
+			<tr>
 				<th>DatePub</th>
 				<td>{{ publication.datePub ? publication.datePub|date('Y-m-d') : '' }}</td>
 			</tr>

@@ -9,6 +9,7 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity(repositoryClass=PublicationRepository::class)
+ *
  */
 class Publication
 {
@@ -34,6 +35,10 @@ class Publication
      */
     private $commentaires;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $titre;
 
     public function getId(): ?int
     {
@@ -96,5 +101,17 @@ class Publication
     public function __toString()
     {
         return $this->contenuPub;
+    }
+
+    public function getTitre(): ?string
+    {
+        return $this->titre;
+    }
+
+    public function setTitre(string $titre): self
+    {
+        $this->titre = $titre;
+
+        return $this;
     }
 }
