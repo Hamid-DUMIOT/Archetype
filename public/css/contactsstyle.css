@@ -1,0 +1,14 @@
+* {
+	margin: 0px; 
+	padding: 0px; 
+	box-sizing: border-box;
+}
+
+body, html {
+	height: 100%;
+}
+
+.banner-image {
+		background-image: url('img/fond.png');
+		background-size: cover;
+}
