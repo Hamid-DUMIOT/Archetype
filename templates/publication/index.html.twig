@@ -8,9 +8,8 @@
 
 	<table class="table">
 		<thead>
-			<tr>
+			<tr class="table-dark">
 				<th>Titre</th>
-				<th>Id</th>
 				<th>ContenuPub</th>
 				<th>DatePub</th>
 				<th>actions</th>
@@ -18,9 +17,8 @@
 		</thead>
 		<tbody>
 			{% for publication in publications %}
-				<tr>
+				<tr class="table-primary">
 					<td>{{ publication.titre }}</td>
-					<td>{{ publication.id }}</td>
 					<td>{{ publication.contenuPub }}</td>
 					<td>{{ publication.datePub ? publication.datePub|date('Y-m-d') : '' }}</td>
 					<td>
