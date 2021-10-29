@@ -34,10 +34,7 @@ class Publication
      */
     private $commentaires;
 
-    /**
-     * @ORM\ManyToOne(targetEntity=User::class, inversedBy="publication")
-     * @ORM\JoinColumn(nullable=false)
-     */
+
     public function getId(): ?int
     {
         return $this->id;
@@ -94,5 +91,10 @@ class Publication
             }
         }
         return $this;
+    }
+
+    public function __toString()
+    {
+        return $this->contenuPub;
     }
 }
