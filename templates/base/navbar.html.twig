@@ -25,7 +25,7 @@
 					<a class="nav-link text-white" href="#">Contact</a>
 				</li>
 				<li class="nav-item"></li>
-					{% if app.user %}
+					{% if app.user %} 
 						<a class="nav-link text-white" href="{{ path('account')}}">Mon compte</a>
 					{% else %}
 						<a class="nav-link text-white" href="{{ path('app_login') }}">Se connecter</a>
@@ -39,13 +39,18 @@
 <!-- transition navbar -->
 <script src="js/bootstrap.bundle.min.js"></script>
 <script type="text/javascript">
-	var nav = document.querySelector('nav');
+var nav = document.querySelector('nav');
 
-window.addEventListener('scroll', function () {
-if (window.pageYOffset > 150) {
-nav.classList.add('bg-dark', 'shadow');
-} else {
-nav.classList.remove('bg-dark', 'shadow');
-}
-});
+{% if (show_transparent_navbar is not defined) %}
+	nav.classList.add('bg-dark', 'shadow');
+{% else %}
+	window.addEventListener('scroll', function () {
+	if (window.pageYOffset > 150) {
+	nav.classList.add('bg-dark', 'shadow');
+	} else {
+	nav.classList.remove('bg-dark', 'shadow');
+	}	
+	});
+{% endif %}
+
 </script>

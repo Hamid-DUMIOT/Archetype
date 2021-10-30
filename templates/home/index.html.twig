@@ -61,11 +61,12 @@
 <!-- Corps de la homepage-->
 <div class="img-fond" id="homepage">
 <div class="container d-grid">
+	<!-- premier paragraphe -->
 	<div class="p-3">
 		<div class="row">
 			<div class="col-6 mt-5 pt-3">
 				<a href="">
-					<img src="/img/homepage/Logo-ArcheType-gold.png" width="325" alt="..." class="mt-5 mb-5">
+					<img src="/img/homepage/Logo-ArcheType-gold.png" width="325" alt="logo class="mt-5 mb-5">
 				</a>
 				<p class="text-justify mt-5 mb-5" style="text-indent:4em">
 					ArcheType est un site web pour la cabinet d'architecte 
@@ -77,52 +78,72 @@
 					auxquelles vous pourrez postuler via un formulaire.
 				</p>
 				<a href="" class="text-justify mt-5">
-						En savoir plus
+					En savoir plus
 				</a>
 			</div>
 			<div class="col-2">
 			</div>
+			<!-- Carte de visite --> 
 			<div class="col-4 mt-5">
 				<img src="/img/homepage/carteVisite.png" class="img-fluid mt-5" alt="Responsiveimage">
 			</div>
 		</div>
 	</div>
-<div class="p-3 mt-4">
-	<div class="row">
-		<div class="col-6">
-			<a href="">
-				<img src="/img/homepage/titreProjet.png" width="250" alt="...">
-			</a>
-
-			{% include 'slider/slider.html.twig' %}
-			<a href="" class="text-justify mt-5">
-				En savoir plus
-			</a>
-
+	<!-- deuxieme paragraphe -->
+	<div class="p-3">
+		<div class="row">
+			<div class="col-6 mt-5 pt-3">
+				<a href="">
+					<img src="/img/homepage/titreProjet.png" width="250" alt="..." class="mt-5 mb-5">
+				</a>
+				<p class="text-justify mt-5 mb-5" style="text-indent:4em">
+						ArcheType est un site web pour la cabinet d'architecte 
+						du même nom. Vous pourrez voir nos créations ainsi que 
+						vous connecter afin de réaliser un devis en ligne. 
+						De plus, découvrez notre rubrique blog pour lire nos 
+						derniers articles. Enfin, la rubrique offre d'emploi dans laquelle
+						nous publierons d'éventuelles propositions d'emploi 
+						auxquelles vous pourrez postuler via un formulaire.
+				</p>
+				<a href="" class="text-justify mt-5">
+					En savoir plus
+				</a>
+			</div>
+			<div class="col-2"></div>
+			<!-- Carte de visite -->
+			<div class="col-4 mt-5">
+				<img src="/img/homepage/carteVisite.png" class="img-fluid mt-5" alt="Responsiveimage">
+			</div>
 		</div>
 	</div>
-</div>
-<div class="p-3">
-	<div class="row">
-		<div class="col-10">
-			<a href="">
-				<img src="/img/homepage/titreArchitecte.png" width="400" alt="...">
-			</a>
-			<p class="text-justify mt-5" style="text-indent:4em">
-				ArcheType regroupe 5 architectes ayant chacun des spécialités différentes.
-				Ainsi vous pourrez passer du spécialiste Bois à celui du métal, ou même faire 
-				appel au deux pour un projet encore unique. Ici, nous utilisons le design thinking 
-				afin de concevoir et de créer le bien qui vous correspond. Retrouvez dans notre 
-				section Blog l'article sur nos architectes ainsi que celui sur le design thinking!
-			</p>
-			<a href="" class="text-justify mt-5">
-				En savoir plus
-			</a>
-
+	<!-- deuxieme paragraphe -->
+	<div class="p-3 mb-5">
+		<div class="row">
+			<div class="col-6 mt-5 pt-3">
+				<a href="">
+					<img src="/img/homepage/titreArchitecte.png" width="420" alt="..." class="mt-5 mb-5">
+				</a>
+				<p class="text-justify mt-5 mb-5" style="text-indent:4em">
+					ArcheType regroupe 5 architectes ayant chacun des spécialités différentes.
+					Ainsi vous pourrez passer du spécialiste Bois à celui du métal, ou même faire 
+					appel au deux pour un projet encore unique. Ici, nous utilisons le design thinking 
+					afin de concevoir et de créer le bien qui vous correspond. Retrouvez dans notre 
+					section Blog l'article sur nos architectes ainsi que celui sur le design thinking!
+				</p>
+				<a href="" class="text-justify mt-5">
+					En savoir plus
+				</a>
+			</div>
+			<div class="col-2"></div>
+			<!-- Carte de visite -->
+			<div class="col-4 mt-5">
+				<img src="/img/homepage/carteVisite.png" class="img-fluid mt-5" alt="Responsiveimage">
+			</div>
 		</div>
 	</div>
-</div>
 </div>
 </div>
 
 {% endblock %}
+
+{% set show_transparent_navbar = true %}
