@@ -23,17 +23,39 @@ class ContactsType extends AbstractType
     {
         $builder
             ->add('Nom', TextType::class)
-            ->add('Prenom', TextType::class)  //sans accent
-            ->add('Email', EmailType::class)
-            ->add('Telephone', NumberType::class)
-            ->add('Budget', MoneyType::class)
-            ->add('Type', ChoiceType::class, ['label' => 'Type de Projet'])
-            ->add('Message', TextareaType::class, ['label' => 'Votre Message'])
-            // ->add('Envoyer', SubmitType::class)
-            ->add('Vider', ResetType::class)
 
-            ->add('save', SubmitType::class, [
-                'attr' => ['class' => 'btn btn-success']
+            ->add('Prenom', TextType::class)  //sans accent
+
+            ->add('Email', EmailType::class)
+
+            ->add('Telephone', NumberType::class, array(
+                'attr' => ['pattern' => '/^[0-9]{10}$/', 'length' => 10]
+            ))
+
+            ->add('Budget', MoneyType::class, [
+                'required'   => false
+            ]) //peut etre nul
+            ->add('Type', ChoiceType::class, [
+                'label' => 'Type de Projet',
+                'choices' => [
+                    'Rénovation' => 'Rénovation',
+                    'Construction' => 'Construction',
+                    'Design' => 'Design',
+                    'Autre' => 'Autre'
+                ]
+
+            ])
+
+            ->add('Message', TextareaType::class, ['label' => 'Votre Message'])
+
+            ->add('Envoyer', SubmitType::class, [
+                'attr' => ['class' => 'btn btn-outline-dark', 'far icon' => 'paper-plane']
+            ])
+
+            //. \PHP_EOL .
+
+            ->add('Vider', ResetType::class, [
+                'attr' => ['class' => 'btn btn-outline-dark', 'justify-content-md-center']
             ]);
 
         //  ->getForm();

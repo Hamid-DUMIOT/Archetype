@@ -6,9 +6,10 @@
 
 body, html {
 	height: 100%;
+	background-image:url('fond.png');
 }
 
 .banner-image {
-		background-image: url('img/fond.png');
+		background-image: url('fond.png');
 		background-size: cover;
 }

@@ -240,6 +240,9 @@
             "./bin/console"
         ]
     },
+    "symfony/css-selector": {
+        "version": "v5.1.11"
+    },
     "symfony/dependency-injection": {
         "version": "v5.1.11"
     },
@@ -507,6 +510,12 @@
     },
     "theseer/tokenizer": {
         "version": "1.2.1"
+    },
+    "tijsverkoyen/css-to-inline-styles": {
+        "version": "2.2.3"
+    },
+    "twig/cssinliner-extra": {
+        "version": "v3.3.3"
     },
     "twig/extra-bundle": {
         "version": "v3.3.3"
