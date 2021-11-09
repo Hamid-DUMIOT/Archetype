@@ -18,3 +18,5 @@ class NousTrouverController extends AbstractController
         ]);
     }
 }
+
+/**nous_trouver/index.html.twig */
