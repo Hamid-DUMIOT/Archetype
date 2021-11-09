@@ -1,19 +1,149 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <style>
-	    .banner-image {
-		    background-image: url('/img/background.jpg');
-		    background-size: cover;
-	    }
-    </style>
-    <div class="banner-image w-100 vh-100 d-flex justify-content-center align-items-center">
-	    <div class="content text-center">
-		    <h1 class="text-white">
-			    L’architecture dépasse le simple fait d’innover.<br>
-			    C’est une manière d’être.
-		    </h1>
-	    </div>
-    </div>
+
+<style>
+	.banner-image {
+		background-image: url('/img/homepage/background.jpg');
+		background-size: cover;
+	}
+	.img-fond{
+		background-image: url('/img/homepage/fond.png');
+		width: 100%;
+	}
+	.text-justify{
+		line-height: 2.1;
+		font-size: 1.2em;
+	}
+	a{
+		color: #000000;
+	}
+	a:hover {
+		color: #58512e;
+	}
+	.arrow{
+  		transition: transform 0.3s ease;
+  		transform: translateY(0px);
+	}
+	.arrow:hover{
+ 		transform: translateY(10px);
+	}
+	.arrow svg{
+  		up: 8px;
+  		position: absolute;
+  		top: 30px;
+  		z-index: 99;
+	}
+</style>
+
+<!-- Image-->
+<div class="banner-image w-100 vh-100 d-flex justify-content-center align-items-center">
+	<div class="container">
+		<div class="row mt-5 pt-5">
+			<div class="content text-center mt-5 pt-4">
+				<h1 class="text-white mt-5 pt-5">
+					L’architecture dépasse le simple fait d’innover.<br>
+					C’est une manière d’être.</h1>
+			</div>
+		</div>
+		<div class="row mt-5 pt-2">
+			<div class="arrow mt-5 text-center">
+				<a href="#homepage">
+					<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="white" class="bi bi-arrow-down" viewbox="0 0 16 16" data-scroll="home" src="" alt="Go down" aria-label="click to scroll down">
+					<path fill-rule="evenodd" d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z"/>
+					</svg>
+				</a>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- Corps de la homepage-->
+<div class="img-fond" id="homepage">
+<div class="container d-grid">
+	<!-- premier paragraphe -->
+	<div class="p-3">
+		<div class="row">
+			<div class="col-6 mt-5 pt-3">
+				<a href="">
+					<img src="/img/homepage/Logo-ArcheType-gold.png" width="325" alt="logo" class="mt-5 mb-5">
+				</a>
+				<p class="text-justify mt-5 mb-5" style="text-indent:4em">
+					ArcheType est un site web pour la cabinet d'architecte 
+					du même nom. Vous pourrez voir nos créations ainsi que 
+					vous connecter afin de réaliser un devis en ligne. 
+					De plus, découvrez notre rubrique blog pour lire nos 
+					derniers articles. Enfin, la rubrique offre d'emploi dans laquelle
+					nous publierons d'éventuelles propositions d'emploi 
+					auxquelles vous pourrez postuler via un formulaire.
+				</p>
+				<a href="" class="text-justify mt-5">
+					En savoir plus
+				</a>
+			</div>
+			<div class="col-2">
+			</div>
+			<!-- Carte de visite --> 
+			<div class="col-4 mt-5">
+				<img src="/img/homepage/carteVisite.png" class="img-fluid mt-5" alt="Responsiveimage">
+			</div>
+		</div>
+	</div>
+	<!-- deuxieme paragraphe -->
+	<div class="p-3">
+		<div class="row">
+			<div class="col-6 mt-5 pt-3">
+				<a href="">
+					<img src="/img/homepage/titreProjet.png" width="250" alt="..." class="mt-5 mb-5">
+				</a>
+				<p class="text-justify mt-5 mb-5" style="text-indent:4em">
+						ArcheType est un site web pour la cabinet d'architecte 
+						du même nom. Vous pourrez voir nos créations ainsi que 
+						vous connecter afin de réaliser un devis en ligne. 
+						De plus, découvrez notre rubrique blog pour lire nos 
+						derniers articles. Enfin, la rubrique offre d'emploi dans laquelle
+						nous publierons d'éventuelles propositions d'emploi 
+						auxquelles vous pourrez postuler via un formulaire.
+				</p>
+				<a href="" class="text-justify mt-5">
+					En savoir plus
+				</a>
+			</div>
+			<div class="col-2"></div>
+			<!-- Carte de visite -->
+			<div class="col-4 mt-5">
+				<img src="/img/homepage/carteVisite.png" class="img-fluid mt-5" alt="Responsiveimage">
+			</div>
+		</div>
+	</div>
+	<!-- deuxieme paragraphe -->
+	<div class="p-3 mb-5">
+		<div class="row">
+			<div class="col-6 mt-5 pt-3">
+				<a href="">
+					<img src="/img/homepage/titreArchitecte.png" width="420" alt="..." class="mt-5 mb-5">
+				</a>
+				<p class="text-justify mt-5 mb-5" style="text-indent:4em">
+					ArcheType regroupe 5 architectes ayant chacun des spécialités différentes.
+					Ainsi vous pourrez passer du spécialiste Bois à celui du métal, ou même faire 
+					appel au deux pour un projet encore unique. Ici, nous utilisons le design thinking 
+					afin de concevoir et de créer le bien qui vous correspond. Retrouvez dans notre 
+					section Blog l'article sur nos architectes ainsi que celui sur le design thinking!
+				</p>
+				<a href="" class="text-justify mt-5">
+					En savoir plus
+				</a>
+			</div>
+			<div class="col-2"></div>
+			<!-- Carte de visite -->
+			<div class="col-4 mt-5">
+				<img src="/img/homepage/carteVisite.png" class="img-fluid mt-5" alt="Responsiveimage">
+			</div>
+		</div>
+	</div>
+</div>
+</div>
 
 {% endblock %}
+
+{% set show_transparent_navbar = true %}

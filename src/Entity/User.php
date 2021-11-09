@@ -52,21 +52,8 @@ class User implements UserInterface
      */
     private $phone;
 
-    /**
-     * @ORM\OneToMany(targetEntity=Actualite::class, mappedBy="user", orphanRemoval=true)
-     */
-    private $actualite;
+  
 
-    /**
-     * @ORM\ManyToOne(targetEntity=Publication::class, inversedBy="users")
-     * @ORM\JoinColumn(nullable=true)
-     */
-    private $publication;
-
-    public function __construct()
-    {
-        $this->actualite = new ArrayCollection();
-    }
 
     public function getId(): ?int
     {
@@ -185,45 +172,4 @@ class User implements UserInterface
         return $this;
     }
 
-    /**
-     * @return Collection|actualite[]
-     */
-    public function getActualite(): Collection
-    {
-        return $this->actualite;
-    }
-
-    public function addActualite(actualite $actualite): self
-    {
-        if (!$this->actualite->contains($actualite)) {
-            $this->actualite[] = $actualite;
-            $actualite->setUser($this);
-        }
-
-        return $this;
-    }
-
-    public function removeActualite(actualite $actualite): self
-    {
-        if ($this->actualite->removeElement($actualite)) {
-            // set the owning side to null (unless already changed)
-            if ($actualite->getUser() === $this) {
-                $actualite->setUser(null);
-            }
-        }
-
-        return $this;
-    }
-
-    public function getPublication(): ?publication
-    {
-        return $this->publication;
-    }
-
-    public function setPublication(?publication $publication): self
-    {
-        $this->publication = $publication;
-
-        return $this;
-    }
 }
