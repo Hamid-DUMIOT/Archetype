@@ -8,9 +8,12 @@
 
 	<table class="table">
 		<tbody>
+
+
 			<tr>
-				<th>Id</th>
-				<td>{{ publication.id }}</td>
+				<th>Image</th>
+				<td><img src="{{ asset(publication.image) }} " alt"..." class="img-thumbnail">
+				</td>
 			</tr>
 			<tr>
 				<th>ContenuPub</th>
@@ -18,7 +21,7 @@
 			</tr>
 			<tr>
 				<th>Titre</th>
-				<td>{{ publication.titre ? }}</td>
+				<td>{{ publication.titre  }}</td>
 			</tr>
 			<tr>
 				<th>DatePub</th>

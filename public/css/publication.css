@@ -1,0 +1,13 @@
+
+		.TitrePublication {
+			font-family: Arial , serif;
+			font-style: normal;
+			-webkit-font-smoothing: antialiased;
+			-moz-osx-font-smoothing: grayscale;
+			font-weight: 400;
+			font-size: 26px;
+			letter-spacing: 0.06em;
+			line-height: 1.2;
+
+		}
+	

@@ -14,7 +14,8 @@ class PublicationType extends AbstractType
         $builder
             ->add('contenuPub')
             ->add('datePub')
-        ;
+            ->add('titre')
+            ->add('image');
     }
 
     public function configureOptions(OptionsResolver $resolver): void
