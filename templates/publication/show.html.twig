@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Publication
+{% endblock %}
+
+{% block body %}
+	<h1>Publication</h1>
+
+	<table class="table">
+		<tbody>
+
+
+			<tr>
+				<th>Image</th>
+				<td><img src="{{ asset(publication.image) }} " alt"..." class="img-thumbnail">
+				</td>
+			</tr>
+			<tr>
+				<th>ContenuPub</th>
+				<td>{{ publication.contenuPub }}</td>
+			</tr>
+			<tr>
+				<th>Titre</th>
+				<td>{{ publication.titre  }}</td>
+			</tr>
+			<tr>
+				<th>DatePub</th>
+				<td>{{ publication.datePub ? publication.datePub|date('Y-m-d') : '' }}</td>
+			</tr>
+		</tbody>
+	</table>
+
+	{{ form_start(form) }}
+	{{ form_widget(form) }}
+	<button class="btn">{{ button_label|default('Save') }}</button>
+	{{ form_end(form) }}
+
+
+	<a href="{{ path('publication_index') }}">back to list</a>
+
+	<a href="{{ path('publication_edit', {'id': publication.id}) }}">edit</a>
+
+	{{ include('publication/_delete_form.html.twig') }}
+
+
+	{% for commentaire in publication.commentaires %}
+		{{ commentaire.contenuCom }}
+	{% endfor %}
+
+
+{% endblock %}
