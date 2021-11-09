@@ -4,6 +4,8 @@
 {% endblock %}
 
 {% block body %}
+<div class="container pt-5 mt-5">
+
 	<h1>Publication</h1>
 
 	<table class="table">
@@ -46,6 +48,8 @@
 	{% for commentaire in publication.commentaires %}
 		{{ commentaire.contenuCom }}
 	{% endfor %}
+
+</div>
 
 
 {% endblock %}
