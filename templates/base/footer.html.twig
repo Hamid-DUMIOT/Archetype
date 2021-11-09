@@ -1,0 +1,54 @@
+<!--footer -->
+
+<link rel="stylesheet" href="{{ asset('css/footercss.css')}}">
+
+<!--<link rel="stylesheet" href="css/bootstrap.min.css"/>-->
+
+<footer class="footer">
+	<div class="container">
+		<div class="row">
+			<div class="footer-col">
+				<h4>ArcheType</h4>
+				<ul>
+					<li><a href="#">A propos</a></li>
+					<li><a href="#">Mentions légales</a></li>
+				</ul>
+			</div>
+			<div class="footer-col">
+				<h4>Nos services</h4>
+				<ul>
+					<li><a href="#">Projets</a></li>
+					<li><a href="#">Architectes</a></li>
+					<li><a href="#">Actualités</a></li>
+					<li><a href="#">Devis</a></li>
+				</ul>
+			</div>
+			<div class="footer-col">
+				<h4>Besoin d'aide?</h4>
+				<ul>
+					<li><a href="{{ path('account') }}">Mon compte</a></li>
+					<li><a href="#">Nous contacter</a></li>
+					<li><a href="{{ path('nous_trouver') }}">Nous Trouver</a></li>
+					<li><a href="{{ path('app_logout') }}">Se deconnecter</a></li>
+				</ul>
+			</div>
+			<div class="footer-col">
+				<h4>Nous suivre</h4>
+				<div class="social-links">
+					<a href="#">
+						<i class="fab fa-facebook-f"></i>
+					</a>
+					<a href="#">
+						<i class="fab fa-twitter"></i>
+					</a>
+					<a href="#">
+						<i class="fab fa-instagram"></i>
+					</a>
+					<a href="#">
+						<i class="fab fa-linkedin-in"></i>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>

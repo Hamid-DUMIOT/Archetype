@@ -22,16 +22,17 @@ class Commentaire
      */
     private $contenuCom;
 
-    /**
-     * @ORM\Column(type="date")
-     */
-    private $dateCom;
 
     /**
      * @ORM\ManyToOne(targetEntity=Publication::class, inversedBy="commentaires")
      * @ORM\JoinColumn(nullable=false)
      */
     private $publication;
+
+    /**
+     * @ORM\Column(type="datetime")
+     */
+    private $dateCom;
 
     public function getId(): ?int
     {
@@ -50,17 +51,6 @@ class Commentaire
         return $this;
     }
 
-    public function getDateCom(): ?string
-    {
-        return $this->dateCom;
-    }
-
-    public function setDateCom(string $dateCom): self
-    {
-        $this->dateCom = $dateCom;
-
-        return $this;
-    }
 
     public function getPublication(): ?publication
     {
@@ -70,6 +60,18 @@ class Commentaire
     public function setPublication(?publication $publication): self
     {
         $this->publication = $publication;
+
+        return $this;
+    }
+
+    public function getDateCom(): ?\DateTimeInterface
+    {
+        return $this->dateCom;
+    }
+
+    public function setDateCom(\DateTimeInterface $dateCom): self
+    {
+        $this->dateCom = $dateCom;
 
         return $this;
     }
