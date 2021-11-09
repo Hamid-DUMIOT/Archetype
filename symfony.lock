@@ -323,9 +323,12 @@
             "ref": "fadbfe33303a76e25cb63401050439aa9b1a9c7f"
         }
     },
+<<<<<<< HEAD
     "symfony/mime": {
         "version": "v5.3.8"
     },
+=======
+>>>>>>> develop
     "symfony/options-resolver": {
         "version": "v5.1.11"
     },
@@ -335,9 +338,12 @@
     "symfony/polyfill-intl-icu": {
         "version": "v1.23.0"
     },
+<<<<<<< HEAD
     "symfony/polyfill-intl-idn": {
         "version": "v1.23.0"
     },
+=======
+>>>>>>> develop
     "symfony/polyfill-intl-normalizer": {
         "version": "v1.23.0"
     },

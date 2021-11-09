@@ -7,6 +7,7 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Component\Form\FormTypeInterface;
 
 /**
  * @ORM\Entity(repositoryClass=UserRepository::class)
@@ -23,7 +24,7 @@ class User implements UserInterface
     /**
      * @ORM\Column(type="string", length=180, unique=true)
      */
-    private $uuid;
+    private $email;
 
     /**
      * @ORM\Column(type="json")
@@ -51,35 +52,22 @@ class User implements UserInterface
      */
     private $phone;
 
-    /**
-     * @ORM\OneToMany(targetEntity=Actualite::class, mappedBy="user", orphanRemoval=true)
-     */
-    private $actualite;
+  
 
-    /**
-     * @ORM\ManyToOne(targetEntity=Publication::class, inversedBy="users")
-     * @ORM\JoinColumn(nullable=false)
-     */
-    private $publication;
-
-    public function __construct()
-    {
-        $this->actualite = new ArrayCollection();
-    }
 
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function getUuid(): ?string
+    public function getEmail(): ?string
     {
-        return $this->uuid;
+        return $this->email;
     }
 
-    public function setUuid(string $uuid): self
+    public function setEmail(string $email): self
     {
-        $this->uuid = $uuid;
+        $this->email = $email;
 
         return $this;
     }
@@ -91,7 +79,7 @@ class User implements UserInterface
      */
     public function getUsername(): string
     {
-        return (string) $this->uuid;
+        return (string) $this->email;
     }
 
     /**
@@ -184,45 +172,4 @@ class User implements UserInterface
         return $this;
     }
 
-    /**
-     * @return Collection|actualite[]
-     */
-    public function getActualite(): Collection
-    {
-        return $this->actualite;
-    }
-
-    public function addActualite(actualite $actualite): self
-    {
-        if (!$this->actualite->contains($actualite)) {
-            $this->actualite[] = $actualite;
-            $actualite->setUser($this);
-        }
-
-        return $this;
-    }
-
-    public function removeActualite(actualite $actualite): self
-    {
-        if ($this->actualite->removeElement($actualite)) {
-            // set the owning side to null (unless already changed)
-            if ($actualite->getUser() === $this) {
-                $actualite->setUser(null);
-            }
-        }
-
-        return $this;
-    }
-
-    public function getPublication(): ?publication
-    {
-        return $this->publication;
-    }
-
-    public function setPublication(?publication $publication): self
-    {
-        $this->publication = $publication;
-
-        return $this;
-    }
 }
