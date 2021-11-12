@@ -24,15 +24,9 @@
         "symfony/validator": "5.1.*",
         "symfony/webpack-encore-bundle": "^1.12",
         "symfony/yaml": "5.1.*",
-<<<<<<< HEAD
         "twig/extra-bundle": "^2.12|^3.0",
         "twig/twig": "^2.12|^3.0",
         "vich/uploader-bundle": "^1.18"
-=======
-        "twig/cssinliner-extra": "^3.3",
-        "twig/extra-bundle": "^3.3",
-        "twig/twig": "^2.12|^3.0"
->>>>>>> develop
     },
     "config": {
         "optimize-autoloader": true,

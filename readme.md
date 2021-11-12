@@ -17,3 +17,7 @@ Docker-compose
 
 docker-compose up -d
 symfony serve -d
+
+# mailer
+ajouter a .env.local.php :
+'MAILER_DSN' => 'smtp://archetype.contact21@gmail.com:groupe11@smtp.gmail.com'
