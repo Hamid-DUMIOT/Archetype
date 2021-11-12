@@ -1,0 +1,60 @@
+{% extends 'base.html.twig' %}
+
+
+{% block title %}Contact
+{% endblock %}
+
+
+{% block body %}
+
+			<div class="container mt-5 pt-5">
+				<h1>
+					Nous Contacter
+				</h1>
+				<p>Pour toute demande relative au cabinet, veuillez renseignez les champs suivants</p>
+
+				{{ form_start(contacts_form) }}
+				<div class="row">
+					<div class="col-sm">
+						<div class="form-group">
+
+							{{ form_row(contacts_form.Nom, {'attr': {'class': 'form-control'}}) }}
+						</div>
+						<div class="form-group">
+							{{ form_row(contacts_form.Email, {'attr': {'class': 'form-control'}}) }}
+
+						</div>
+						<div class="form-group">
+							{{ form_row(contacts_form.Type, {'attr': {'class': 'form-control'}}) }}
+
+						</div>
+					</div>
+					<div class="col-sm">
+						<div class="form-group">
+							{{ form_row(contacts_form.Prenom, {'attr': {'class': 'form-control'}}) }}
+
+						</div>
+						<div class="form-group">
+							{{ form_row(contacts_form.Telephone, {'attr': {'class': 'form-control'}}) }}
+
+						</div>
+						<div class="form-group">
+							{{ form_row(contacts_form.Budget, {'attr': {'class': 'form-control'}}) }}
+						</div>
+					</div>
+
+
+					<div class="form-group">
+						{{ form_row(contacts_form.Message, {'attr': {'class': 'form-control'}}) }}
+
+					</div>
+
+
+					{{ form_end(contacts_form) }}
+
+
+					{#{{form(contacts_form) }}#}
+
+				</div>
+
+{% endblock %}
