@@ -19,10 +19,11 @@
 					<a class="nav-link text-white" href="#">Architectes</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link text-white" href="{{ path('actualite') }}">Actualités</a>
+					<a class="nav-link text-white" href="{{ path('publication_index') }}">Actualités</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link text-white" href="#">Contact</a>
+					<a class="nav-link text-white" href="{{ path('contacts') }}">Contact</a>
+
 				</li>
 				<li class="nav-item"></li>
 					{% if app.user %} 
