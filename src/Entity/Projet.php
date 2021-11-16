@@ -25,6 +25,11 @@ class Projet
     private $libelleProjet;
 
     /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $slug;
+
+    /**
      * @ORM\Column(type="text")
      */
     private $descriptionProjet;
@@ -49,6 +54,18 @@ class Projet
      * @ORM\OneToMany(targetEntity=Devis::class, mappedBy="projet", orphanRemoval=true)
      */
     private $devis;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $image_projet;
+
+
+    /**
+     * @ORM\ManyToOne(targetEntity=TypeProjet::class, inversedBy="projets")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $typeProjet;
 
     public function __construct()
     {
@@ -146,6 +163,42 @@ class Projet
                 $devi->setProjet(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getImageProjet(): ?string
+    {
+        return $this->image_projet;
+    }
+
+    public function setImageProjet(string $image_projet): self
+    {
+        $this->image_projet = $image_projet;
+
+        return $this;
+    }
+
+    public function getSlug(): ?string
+    {
+        return $this->slug;
+    }
+
+    public function setSlug(string $slug): self
+    {
+        $this->slug = $slug;
+
+        return $this;
+    }
+
+    public function getTypeProjet(): ?TypeProjet
+    {
+        return $this->typeProjet;
+    }
+
+    public function setTypeProjet(?TypeProjet $typeProjet): self
+    {
+        $this->typeProjet = $typeProjet;
 
         return $this;
     }

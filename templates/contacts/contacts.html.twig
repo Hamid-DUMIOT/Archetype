@@ -7,64 +7,83 @@
 
 {% block body %}
 
-	<!doctype html>
-	<html lang="fr">
-		<head>
-			<meta charset="utf-8">
-			<link rel="stylesheet" href="{{ asset('css/contactsstyle.css')}}">
+	<div class="container mt-5 pt-5">
+		<h1>
+			Nous Contacter
+		</h1>
+		<p>Pour toute demande relative au cabinet, veuillez renseignez les champs suivants</p>
 
-		</head>
-		<body>
-			<div class="container">
-				<h1>
-					Nous Contacter
-				</h1>
-				<p>Pour toute demande relative au cabinet, veuillez renseignez les champs suivants</p>
+		{{ form_start(contacts_form) }}
+		<div class="row">
+			<div class="col-sm">
+				<div class="form-group">
 
-				{{ form_start(contacts_form) }}
-				<div class="row">
-					<div class="col-sm">
-						<div class="form-group">
-
-							{{ form_row(contacts_form.Nom, {'attr': {'class': 'form-control'}}) }}
-						</div>
-						<div class="form-group">
-							{{ form_row(contacts_form.Email, {'attr': {'class': 'form-control'}}) }}
-
-						</div>
-						<div class="form-group">
-							{{ form_row(contacts_form.Type, {'attr': {'class': 'form-control'}}) }}
-
-						</div>
-					</div>
-					<div class="col-sm">
-						<div class="form-group">
-							{{ form_row(contacts_form.Prenom, {'attr': {'class': 'form-control'}}) }}
-
-						</div>
-						<div class="form-group">
-							{{ form_row(contacts_form.Telephone, {'attr': {'class': 'form-control'}}) }}
-
-						</div>
-						<div class="form-group">
-							{{ form_row(contacts_form.Budget, {'attr': {'class': 'form-control'}}) }}
-						</div>
-					</div>
-
-
-					<div class="form-group">
-						{{ form_row(contacts_form.Message, {'attr': {'class': 'form-control'}}) }}
-
-					</div>
-
-
-					{{ form_end(contacts_form) }}
-
-
-					{#{{form(contacts_form) }}#}
+					{{ form_row(contacts_form.Nom, {'attr': {'class': 'form-control'}}) }}
+				</div>
+				<div class="form-group">
+					{{ form_row(contacts_form.Email, {'attr': {'class': 'form-control'}}) }}
 
 				</div>
-			</body>
-		</body>
-	</html>
-</body></html></body></html>{#<div class="banner-image" style="background-image: url(img/fond.png);"></div>#}{% endblock %}
+				<div class="form-group">
+					{{ form_row(contacts_form.Type, {'attr': {'class': 'form-control'}}) }}
+
+				</div>
+			</div>
+			<div class="col-sm">
+				<div class="form-group">
+					{{ form_row(contacts_form.Prenom, {'attr': {'class': 'form-control'}}) }}
+
+				</div>
+				<div class="form-group">
+					{{ form_row(contacts_form.Telephone, {'attr': {'class': 'form-control'}}) }}
+
+				</div>
+				<div class="form-group">
+					{{ form_row(contacts_form.Budget, {'attr': {'class': 'form-control'}}) }}
+				</div>
+			</div>
+
+
+			<div class="form-group">
+				{{ form_row(contacts_form.Message, {'attr': {'class': 'form-control'}}) }}
+
+			</div>
+
+			<div class="col-md-12 text-center">
+				<div class="centre">
+					<div class="form-group">
+						{{ form_row(contacts_form.Envoyer, {'attr': {'class': 'btn btn-outline-dark'}}) }}
+
+					</div>
+				</div>
+
+				<div class="centre">
+					<div class="form-group">
+						{{ form_row(contacts_form.Vider, {'attr': {'class': 'btn btn-outline-dark'}}) }}
+
+					</div>
+				</div>
+			</div>
+
+			{{ form_end(contacts_form) }}
+
+
+			{#{{form(contacts_form) }}#}
+
+		</div>
+
+
+		<style>
+
+			.centre {
+				margin: 0 auto;
+				padding: 1%;
+				width: 100px;
+			}
+
+			.form-group {
+				margin: 1%;
+			}
+		</style>
+
+	{% endblock %}
