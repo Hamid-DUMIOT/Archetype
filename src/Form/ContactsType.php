@@ -55,7 +55,7 @@ class ContactsType extends AbstractType
             //. \PHP_EOL .
 
             ->add('Vider', ResetType::class, [
-                'attr' => ['class' => 'btn btn-outline-dark', 'justify-content-md-center']
+                'attr' => ['class' => 'btn btn-outline-dark']
             ]);
 
         //  ->getForm();
