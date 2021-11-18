@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Projet{% endblock %}
+{% block body %}
+<div class="container pt-5 mt-5">
+
+	<h1>Projet</h1>
+
+	<table class="table">
+		<tbody>
+
+
+			<tr>
+				<th>Image</th>
+				<td><img src="{{ asset(projet.image_projet) }} " alt"..." class="img-thumbnail">
+				</td>
+			</tr>
+			<tr>
+				<th>Description du Projet </th>
+				<td>{{ projet.descriptionProjet }}</td>
+			</tr>
+			<tr>
+				<th>Titre</th>
+				<td>{{ projet.libelleProjet  }}</td>
+			</tr>
+			<tr>
+				<th>DatePub</th>
+				<td>{{ projet.dateDebut ? projet.dateFin|date('Y-m-d') : '' }}</td>
+			</tr>
+		</tbody>
+	</table>
+
+	<a href="{{ path('projets_index') }}">back to list</a>
+
+	
+
+</div>
+
+
+{% endblock %}

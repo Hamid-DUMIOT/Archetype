@@ -12,6 +12,7 @@ use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractDashboardController;
 
 use App\Entity\User;
 use App\Entity\Publication;
+use App\Entity\Projet;
 
 
 class DashboardController extends AbstractDashboardController
@@ -39,6 +40,7 @@ class DashboardController extends AbstractDashboardController
        
        yield  MenuItem::linkToCrud('Publication', 'fa fa-tag', Publication::class);
        yield  MenuItem::linkToCrud('Users', 'fa fa-user', User::class);
+       yield  MenuItem::linkToCrud('Projet', 'fa fa-tag', Projet::class);
 
     
     }
