@@ -9,6 +9,7 @@
         "doctrine/doctrine-bundle": "^2.3",
         "doctrine/doctrine-migrations-bundle": "^3.1",
         "doctrine/orm": "^2.10",
+        "gregwar/captcha-bundle": "^2.1",
         "sensio/framework-extra-bundle": "^6.2",
         "symfony/console": "5.1.*",
         "symfony/dotenv": "5.1.*",

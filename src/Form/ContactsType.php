@@ -16,11 +16,13 @@ use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\NumberType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
+use Gregwar\CaptchaBundle\Type\CaptchaType;
 
 class ContactsType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
+
         $builder
             ->add('Nom', TextType::class)
 
@@ -28,9 +30,10 @@ class ContactsType extends AbstractType
 
             ->add('Email', EmailType::class)
 
-            ->add('Telephone', NumberType::class, array(
-                'attr' => ['pattern' => '/^[0-9]{10}$/', 'length' => 10]
-            ))
+            ->add(
+                'Telephone',
+                NumberType::class, //array('attr' => ['pattern' => '/^[0-9]{10}$/', 'length' => 10])
+            )
 
             ->add('Budget', MoneyType::class, [
                 'required'   => false
@@ -48,9 +51,26 @@ class ContactsType extends AbstractType
 
             ->add('Message', TextareaType::class, ['label' => 'Votre Message'])
 
+
+            ->add(
+                'captcha',
+                CaptchaType::class,
+                [
+                    'label' => 'Je ne suis pas un robot : ' //. \PHP_EOL .
+                ]
+            )
+
+            /* array(
+                'width' => 100,
+                'height' => 25,
+                'length' => 6,
+
+            )*/
+
             ->add('Envoyer', SubmitType::class, [
                 'attr' => ['class' => 'btn btn-outline-dark', 'far icon' => 'paper-plane']
             ])
+
 
             //. \PHP_EOL .
 
