@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{% endblock %}
+
+{% block body %}
+
+
+<h1 class="text-black">Projet </h1>
+
+	<div class="container pt-5 mt-5">
+		{% for projet in projets %}
+
+			<div class="row">
+				<div class="col-3"></div>
+				<div class="col-3">
+					<img src="{{ asset(projet.image_projet) }} " alt"..." class="img-thumbnail">
+				</div>
+				<div class="col-6">
+					<h2 class="TitrePublication">
+						{{ projet.libelleProjet}}</h2>
+					{{ projet.dateDebut ? projet.dateFin|date('Y-m-d') : '' }}
+					<div class="col-b-5">
+						<a href="{{ path('projets_show', {'id': projet.id}) }}">En savoir plus
+						</a><br>
+					</div>
+				</div>
+			</div>
+		</div>
+	{% else %}
+		<tr>
+			<td colspan="4">no records found</td>
+		</tr>
+	{% endfor %}
+</div>
+
+{# display navigation #}
+<div class="d-flex justify-content-center mt-5">
+
+    {{ knp_pagination_render(projets, 'base/pagination.html.twig') }}
+</div>
+{% endblock %}

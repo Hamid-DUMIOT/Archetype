@@ -6,9 +6,12 @@ use App\Repository\ProjetRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
+use Symfony\Component\HttpFoundation\File\File;
 
 /**
  * @ORM\Entity(repositoryClass=ProjetRepository::class)
+ * @Vich\Uploadable
  */
 class Projet
 {
@@ -23,6 +26,11 @@ class Projet
      * @ORM\Column(type="string", length=255)
      */
     private $libelleProjet;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $slug;
 
     /**
      * @ORM\Column(type="text")
@@ -41,7 +49,7 @@ class Projet
 
     /**
      * @ORM\ManyToOne(targetEntity=User::class, inversedBy="projets")
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\JoinColumn(nullable=true)
      */
     private $user;
 
@@ -49,6 +57,44 @@ class Projet
      * @ORM\OneToMany(targetEntity=Devis::class, mappedBy="projet", orphanRemoval=true)
      */
     private $devis;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $image_projet;
+
+
+    /**
+     * @ORM\ManyToOne(targetEntity=TypeProjet::class, inversedBy="projets")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $typeProjet;
+    
+    /**
+     * @Vich\UploadableField(mapping="projets_images", fileNameProperty="image_projet")
+     * @var File
+     */
+    private $imageFile;
+
+
+    public function setImageFile(File $image = null)
+    {
+        $this->imageFile = $image;
+
+        // VERY IMPORTANT:
+        // It is required that at least one field changes if you are using Doctrine,
+        // otherwise the event listeners won't be called and the file is lost
+        if ($image) {
+            // if 'updatedAt' is not defined in your entity, use another property
+            $this->updateAt = new \DateTime('now');
+        }
+    }
+
+    public function getImageFile()
+    {
+        return $this->imageFile;
+    }
+
 
     public function __construct()
     {
@@ -149,4 +195,53 @@ class Projet
 
         return $this;
     }
+
+    public function getImageProjet(): ?string
+    {
+        return $this->image_projet;
+    }
+
+    public function setImageProjet(string $image_projet): self
+    {
+        $this->image_projet = $image_projet;
+
+        return $this;
+    }
+    
+    public function getImage_Projet(): ?string
+    {
+        return $this->image_projet;
+    }
+
+    public function setImage_Projet(string $image_projet): self
+    {
+        $this->image_projet = $image_projet;
+
+        return $this;
+    }
+
+    public function getSlug(): ?string
+    {
+        return $this->slug;
+    }
+
+    public function setSlug(string $slug): self
+    {
+        $this->slug = $slug;
+
+        return $this;
+    }
+
+    public function getTypeProjet(): ?TypeProjet
+    {
+        return $this->typeProjet;
+    }
+
+    public function setTypeProjet(?TypeProjet $typeProjet): self
+    {
+        $this->typeProjet = $typeProjet;
+
+        return $this;
+    }
+
 }

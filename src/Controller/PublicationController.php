@@ -4,13 +4,14 @@ namespace App\Controller;
 
 use App\Entity\Commentaire;
 use App\Entity\Publication;
-use App\Form\CommentaireFormType;
 use App\Form\PublicationType;
+use App\Form\CommentaireFormType;
 use App\Repository\PublicationRepository;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 /**
  * @Route("/publication")
@@ -20,10 +21,22 @@ class PublicationController extends AbstractController
     /**
      * @Route("/", name="publication_index", methods={"GET"})
      */
-    public function index(PublicationRepository $publicationRepository): Response
+    public function index(PublicationRepository $publicationRepository, PaginatorInterface $paginator, Request $request): Response
     {
+
+        $data =$publicationRepository->findAll();
+
+        $publications = $paginator->paginate(
+            $data, /* query NOT result */
+            $request->query->getInt('page', 1), /*page number*/
+            2 /*limit per page*/
+        );
+
+
+
+
         return $this->render('publication/index.html.twig', [
-            'publications' => $publicationRepository->findAll(),
+            'publications' => $publications ,
         ]);
     }
 
