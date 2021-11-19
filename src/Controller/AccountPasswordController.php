@@ -16,6 +16,7 @@ class AccountPasswordController extends AbstractController
      */
     public function index(Request $request, UserPasswordEncoderInterface $encoder): Response
     {
+        $notif = null;
         
         $user = $this->getUser();
         $form = $this->createForm(ChangePasswordType::class, $user);
@@ -30,10 +31,14 @@ class AccountPasswordController extends AbstractController
                 $entityManager = $this->getDoctrine()->getManager();
                 $entityManager->persist($user);
                 $entityManager->flush();
+                $notif = 'Votre mot de passe a bien été mis à jour.';
+            } else{
+                $notif = 'Votre mot de passe actuel est incorrect.';
             }
         }
         return $this->render('account/password.html.twig', [
-            'form' => $form->createView()
+            'form' => $form->createView(),
+            'notif' => $notif
         ]);
     }
 }
