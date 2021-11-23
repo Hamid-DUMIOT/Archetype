@@ -37,13 +37,20 @@
 			</li>
 		</ul>
 	</div>
-</div></nav><!-- transition navbar --><script src="js/bootstrap.bundle.min.js"></script><script type="text/javascript">
+</div>
+</nav>
+
+<!-- transition navbar -->
+
+<script src="js/bootstrap.bundle.min.js"></script>
+<script type="text/javascript">
 var nav = document.querySelector('nav');{% if (show_transparent_navbar is not defined) %}nav.classList.add('bg-dark', 'shadow');
 {% else %}
 window.addEventListener('scroll', function () {
 if (window.pageYOffset > 150) {
 nav.classList.add('bg-dark', 'shadow');
 } else {
-nav.classList.remove('bg-dark', 'shadow');
-}
-});{% endif %}</script>
+nav.classList.remove('bg-dark', 'shadow');}
+});
+{% endif %}
+</script>
