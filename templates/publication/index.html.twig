@@ -4,43 +4,83 @@
 {% block title %}{% endblock %}
 {% block body %}
 
-	<h1 class="text-black">Publication</h1>
+<link rel="stylesheet" href="{{ asset('css/publication.css')}}">
 
-	<div class="container pt-5 mt-5">
-		{% for publication in publications %}
-
-			<div class="row">
-				<div class="col-3"></div>
-				<div class="col-3">
-					<img src="{{ asset(publication.image) }} " alt"..." class="img-thumbnail">
-				</div>
-				<div class="col-6">
-					<h2 class="TitrePublication">
-						{{ publication.titre }}</h2>
-					{{ publication.datePub ? publication.datePub|date('Y-m-d') : '' }}
-					<p>
-						{{ publication.contenuPub }}
-					</p><br>
-					<div class="col-b-5">
-						<a href="{{ path('publication_show', {'id': publication.id}) }}">En savoir plus
-						</a><br>
-						<span>
-							Comment</span>
-						<a href="{{ path('publication_edit', {'id': publication.id}) }}">edit</a>
-					</div>
-				</div>
+	
+	<div class="container pt-5 mt-5 text-center" >
+	
+			<h1> Publication </h1>
 			</div>
+
+			{% for publication in publications %}
+				<div class="row">
+					<div class="col-2"></div>
+					<div class="col-4">
+						<picture>
+  						<source srcset= "{{ vich_uploader_asset(publication,'imageFile') }}" type="image/svg+xml">
+						<img src="{{ vich_uploader_asset(publication,'imageFile') }} " alt"..." class="img-fluid img-thumbnail">
+						</picture>
+					</div>
+						<div class="col-5">
+							<a href="{{ path('publication_show', {'id': publication.id}) }}" class="TitrePublication">
+							{{ publication.titre }}</a>
+
+							<h6 class = " datePublication" >{{ publication.datePub ? publication.datePub|date('Y-m-d') : '' }}</h6>
+							<div class = "content">
+								<p>	{{ publication.contenuPub|striptags}} </p>
+						</div>
+							<div class="col-b-5">
+								<a href="{{ path('publication_show', {'id': publication.id}) }}" class="LienArrow">
+								<img src= "/img/link/arrow-right.png " alt="fleche droite" class="Arrow"/>
+								</a>
+							</div>
+				</div>
 		</div>
+	
+	
 	{% else %}
 		<tr>
 			<td colspan="4">no records found</td>
 		</tr>
 	{% endfor %}
-</div>
+
 
 {# display navigation #}
 <div class="d-flex justify-content-center mt-5">
 
     {{ knp_pagination_render(publications, 'base/pagination.html.twig') }}
 </div>
+
 {% endblock %}
+
+
+				
+	{#					
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary " data-toggle="modal" data-target="#exampleModalLong">
+  Laisser un commentaire
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Avis</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+	   <p>Modal body text goes here.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+						{# <a href="{{ path('publication_edit', {'id': publication.id}) }}">edit</a> #}
+							{# <a href="{{ path('publication_delete', {'id': publication.delete}) }}">delete</a> #}

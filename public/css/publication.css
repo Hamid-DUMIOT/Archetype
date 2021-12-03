@@ -1,13 +1,75 @@
 
 		.TitrePublication {
-			font-family: Arial , serif;
+			font-family: orpheuspro ,serif;
 			font-style: normal;
 			-webkit-font-smoothing: antialiased;
 			-moz-osx-font-smoothing: grayscale;
 			font-weight: 400;
-			font-size: 26px;
+			font-size: 43px;
 			letter-spacing: 0.06em;
 			line-height: 1.2;
-
+			
 		}
+
+		a{ 
+			color: black;
+			text-decoration: none;
+		}
+
+		.datePublication{
+			margin-top: 15px;
+		}
+
+		.content {
+			
+			overflow: hidden;
+			text-overflow: ellipsis;
+			display: -webkit-box;
+			-webkit-box-orient: vertical;
+			-webkit-line-clamp: 3; /* number of lines to show */
+			line-height: 1.8;        /* fallback */
+			max-height: 3 * 0.5;       /* fallback */
+			font-weight: 300;
+			font-size: 15px;
+			letter-spacing: .05em; 
+			margin-top: 15px;
+			margin-left: 20px;	
+			}
+
+			
+
+
+			.row{
+				margin-top: 50px;
+			}
+
+			.container {
+				padding-top: 25px; 
+				margin-top: 25px;
+			}
+		
+
+
+			.Arrow{
+
+				width: 45px;
+				height: 20px;
+				background-size: 100% 100%;
+				margin-top: 35px;
+				transition: 2.5s cubic-bezier(.215,.61,.355,1);
+			}
+
+
+			
+
+			
+
+			.datePublication{ font-family:Arial narrow
+			}
+			
+
 	
+			p {
+				width: 200px; /* à modifier selon vos besoins */
+				overflow: hidden; /* les dépassements seront masqués */
+			  }

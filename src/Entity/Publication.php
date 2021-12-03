@@ -48,10 +48,15 @@ class Publication
     private $image;
 
     /**
-     * @Vich\UploadableField(mapping="publication_images", fileNameProperty="image")
+     * @Vich\UploadableField(mapping="publications_images", fileNameProperty="image")
      * @var File
      */
     private $imageFile;
+
+    /**
+     * @ORM\Column(type="datetime")
+     */
+    private $updateAt;
 
 
     public function setImageFile(File $image = null)
@@ -154,6 +159,18 @@ class Publication
     public function setTitre(string $titre): self
     {
         $this->titre = $titre;
+
+        return $this;
+    }
+
+    public function getUpdateAt(): ?\DateTimeInterface
+    {
+        return $this->updateAt;
+    }
+
+    public function setUpdateAt(\DateTimeInterface $updateAt): self
+    {
+        $this->updateAt = $updateAt;
 
         return $this;
     }

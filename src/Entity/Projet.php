@@ -58,24 +58,33 @@ class Projet
      */
     private $devis;
 
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private $image_projet;
-
-
+  
     /**
      * @ORM\ManyToOne(targetEntity=TypeProjet::class, inversedBy="projets")
      * @ORM\JoinColumn(nullable=false)
      */
     private $typeProjet;
     
+  
+
     /**
-     * @Vich\UploadableField(mapping="projets_images", fileNameProperty="image_projet")
+     * @ORM\Column(type="string", length=255)
+     */
+    private $image;
+
+  /**
+     * @Vich\UploadableField(mapping="projets_images", fileNameProperty="image")
      * @var File
      */
     private $imageFile;
 
+    /**
+     * @ORM\Column(type="datetime")
+     * 
+     */
+    private $updateAt;
+
+    
 
     public function setImageFile(File $image = null)
     {
@@ -196,30 +205,6 @@ class Projet
         return $this;
     }
 
-    public function getImageProjet(): ?string
-    {
-        return $this->image_projet;
-    }
-
-    public function setImageProjet(string $image_projet): self
-    {
-        $this->image_projet = $image_projet;
-
-        return $this;
-    }
-    
-    public function getImage_Projet(): ?string
-    {
-        return $this->image_projet;
-    }
-
-    public function setImage_Projet(string $image_projet): self
-    {
-        $this->image_projet = $image_projet;
-
-        return $this;
-    }
-
     public function getSlug(): ?string
     {
         return $this->slug;
@@ -240,6 +225,30 @@ class Projet
     public function setTypeProjet(?TypeProjet $typeProjet): self
     {
         $this->typeProjet = $typeProjet;
+
+        return $this;
+    }
+
+    public function getImage(): ?string
+    {
+        return $this->image;
+    }
+
+    public function setImage(string $image): self
+    {
+        $this->image = $image;
+
+        return $this;
+    }
+
+    public function getUpdateAt(): ?\DateTimeInterface
+    {
+        return $this->updateAt;
+    }
+
+    public function setUpdateAt(\DateTimeInterface $updateAt): self
+    {
+        $this->updateAt = $updateAt;
 
         return $this;
     }
