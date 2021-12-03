@@ -20,4 +20,5 @@ yarn-error.log
 /phpunit.xml
 .phpunit.result.cache
 ###< phpunit/phpunit ###
-/public/uploads/publications
+/public/uploads/publication
+/public/uploads/projets

@@ -32,7 +32,7 @@ class ProjetController extends AbstractController
         $projets = $paginator->paginate(
             $data, /* query NOT result */
             $request->query->getInt('page', 1), /*page number*/
-            1 /*limit per page*/
+            4 /*limit per page*/
         );
 
 

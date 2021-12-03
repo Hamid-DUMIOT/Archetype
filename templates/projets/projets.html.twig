@@ -4,34 +4,51 @@
 
 {% block body %}
 
+<link rel="stylesheet" href="{{ asset('css/publication.css')}}">
 
-<h1 class="text-black">Projet </h1>
 
-	<div class="container pt-5 mt-5">
-		{% for projet in projets %}
 
-			<div class="row">
-				<div class="col-3"></div>
-				<div class="col-3">
-					<img src="{{ asset(projet.image_projet) }} " alt"..." class="img-thumbnail">
-				</div>
-				<div class="col-6">
-					<h2 class="TitrePublication">
-						{{ projet.libelleProjet}}</h2>
-					{{ projet.dateDebut ? projet.dateFin|date('Y-m-d') : '' }}
-					<div class="col-b-5">
-						<a href="{{ path('projets_show', {'id': projet.id}) }}">En savoir plus
-						</a><br>
+	<div class="container pt-5 mt-5 text-center">
+			<h1> Nos projets </h1>
+	</div>
+
+
+			{% for projet in projets %}
+				<div class="row">
+ 					<div class="col-4"></div>
+					<div class="col-4">
+						<picture>
+  						<source srcset= "{{ vich_uploader_asset(projet,'imageFile') }} " type="image/svg+xml">
+						<img src="{{ vich_uploader_asset(projet,'imageFile') }} " alt"..." class=" img-fluid img-thumbail">
+						</picture>
 					</div>
+					<div class="col-4"></div>
+					<div class="col-4"></div>
+						<div class="text-center">
+							<a href="{{ path('projets_show', {'id': projet.id}) }}" class="TitrePublication">
+							
+              {{ projet.libelleProjet}}</a>
+							<h6>{{ projet.dateDebut ? projet.dateFin|date('Y-m-d') : '' }}</h6>
+							
+							<div class = "content">
+								<p> {{ projet.descriptionProjet|striptags }}</p>
+							</div>
+              
+							<div class="col-b-5">
+								<a href="{{ path('projets_show', {'id': projet.id}) }}" class="LienArrow">
+								<img src= "/img/link/arrow-right.png " alt="fleche droite" class="Arrow"/>
+								</a>
+							</div>
+						</div>
 				</div>
-			</div>
-		</div>
-	{% else %}
-		<tr>
-			<td colspan="4">no records found</td>
-		</tr>
-	{% endfor %}
-</div>
+	</div>
+
+
+    {% else %}
+	      	<tr>
+		       	<td colspan="4">no records found</td>
+	      	</tr>
+	      {% endfor %}
 
 {# display navigation #}
 <div class="d-flex justify-content-center mt-5">

@@ -5,7 +5,11 @@
 {% block body %}
     <div class="container mt-5 pt-5">
         <h1>Espace membre</h1>
-        Bienvenue {{ app.user.prenomUser }} sur votre compte !
+        Bienvenue {{ app.user.prenomUser }} sur votre compte !</br>
+
+        {% if is_granted("ROLE_ADMIN") %}
+          <a href="/admin">Vous êtes administrateur, accèder au backoffice? </a></br>
+          {% endif %}
         <a href="{{ path('account_password') }}">Modifier mon mot de passe </a>
     </div>
 

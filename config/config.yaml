@@ -1,0 +1,7 @@
+assetic:
+    assets:
+        libraries:
+            inputs:
+                - '%kernel.root_dir%/Resources/public/js/jquery.min.js'
+                - '%kernel.root_dir%/Resources/public/js/jquery.dropdown.js'
+                - '%kernel.root_dir%/Resources/public/js/modernizr.js'

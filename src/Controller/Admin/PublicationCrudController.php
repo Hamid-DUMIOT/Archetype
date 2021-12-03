@@ -26,8 +26,8 @@ class PublicationCrudController extends AbstractCrudController
             TextField::new('Titre'),
             TextEditorField::new('contenuPub'),
             DateField::new('datePub'),
-            TextField::new('imageFile')->setFormType(VichImageType::class)->onlyWhenUpdating(),
-            ImageField::new('file')->setBasePath('/uploads/publications/')->onlyOnIndex(),
+            TextField::new('imageFile')->setFormType(VichImageType::class)->hideOnIndex(),
+            ImageField::new('image')->setBasePath('/uploads/publication/')->onlyOnIndex(),
         ];
     }
     
