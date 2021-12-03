@@ -23,15 +23,14 @@
 						</picture>
 					</div>
 					<div class="col-4"></div>
-					<div class="col-4"></div>
 						<div class="text-center">
 							<a href="{{ path('projets_show', {'id': projet.id}) }}" class="TitrePublication">
 							
-              {{ projet.libelleProjet}}</a>
+            				  {{ projet.libelleProjet}}</a>
 							<h6>{{ projet.dateDebut ? projet.dateFin|date('Y-m-d') : '' }}</h6>
 							
 							<div class = "content">
-								<p> {{ projet.descriptionProjet|striptags }}</p>
+								{{ projet.descriptionProjet|striptags }}
 							</div>
               
 							<div class="col-b-5">

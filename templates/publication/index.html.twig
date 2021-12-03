@@ -24,10 +24,10 @@
 						<div class="col-5">
 							<a href="{{ path('publication_show', {'id': publication.id}) }}" class="TitrePublication">
 							{{ publication.titre }}</a>
-
 							<h6 class = " datePublication" >{{ publication.datePub ? publication.datePub|date('Y-m-d') : '' }}</h6>
+							
 							<div class = "content">
-								<p>	{{ publication.contenuPub|striptags}} </p>
+								{{ publication.contenuPub|striptags}} 
 						</div>
 							<div class="col-b-5">
 								<a href="{{ path('publication_show', {'id': publication.id}) }}" class="LienArrow">
