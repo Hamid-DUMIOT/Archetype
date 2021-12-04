@@ -1,16 +1,37 @@
-{% extends 'base.html.twig' %}
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-{% block title %}Inscription - ArcheType{% endblock %}
+		<link rel="icon" href="{{asset("/img/Icon.png") }}">
+		<title>
+			{% block title %}Inscription - ArcheType{% endblock %}
+		</title>
 
-{% block body %}
+		{% block stylesheets %}
+			{{ encore_entry_link_tags('app') }}
+		{% endblock %}
 
+		{% block javascripts %}
+			{{ encore_entry_script_tags('app') }}
+
+		{% endblock %}
+	</head>
+
+	<header>
+		{% include 'base/navbar.html.twig' %}
+	</header>
+
+<body>
+<div class="img-fond"
 
 {% for flashError in app.flashes('verify_email_error') %}
 	<div class="alert alert-danger" role="alert">{{ flashError }}</div>
 {% endfor %}
 
 <section class="vh-100 bg-image mt-5 bt-5">
-	<div class="mask d-flex align-items-center h-100 gradient-custom-3 mt-5 mb-5 pb-5">
+	<div class="mask d-flex align-items-center h-100 gradient-custom-3 mt-5 pb-2">
 		<div class="container h-100 mt-5 mb-5">
 			<div class="row d-flex justify-content-center align-items-center h-100">
 				<div class="col-12 col-md-9 col-lg-7 col-xl-6 mt-5">
@@ -62,8 +83,12 @@
 		</div>
 	</div>
 </section>
+</div>
+</body>
 
-	
+<footer>
+	{% include 'base/footer.html.twig' %}
+</footer>
 
 	<style>
 		.form-check:focus{
@@ -74,9 +99,9 @@
 			border:2px solid #58512e;
 			box-shadow: 0 0 3px #58512e;
 		}
-		.bg-image{
+		.img-fond{
 			background-image: url('/img/homepage/bg.png');
-			background-size: cover;
+			width: 100%;
 		}
 		.gradient-custom-4 {
 			background: #58512e;
@@ -100,10 +125,10 @@
 		#mdp{
 			text-decoration: none;
 		}
-{% endblock %}
 
 
 
+</html>
 	
 
 

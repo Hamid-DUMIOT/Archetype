@@ -1,7 +1,7 @@
 {% extends 'base.html.twig' %}
 
-
 {% block title %}Publications - ArcheType{% endblock %}
+
 {% block body %}
 
 <link rel="stylesheet" href="{{ asset('css/publication.css')}}">
@@ -9,7 +9,7 @@
 	
 	<div class="container pt-5 mt-5 text-center" >
 	
-			<h1> Publication </h1>
+			<h1>Publications</h1>
 			</div>
 
 			{% for publication in publications %}
@@ -40,7 +40,7 @@
 	
 	{% else %}
 		<tr>
-			<td colspan="4">no records found</td>
+			<td colspan="4">Pas de publications</td>
 		</tr>
 	{% endfor %}
 

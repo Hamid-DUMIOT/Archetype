@@ -3,14 +3,70 @@
 {% block title %}Espace membre - ArcheType{% endblock %}
 
 {% block body %}
-    <div class="container mt-5 pt-5">
-        <h1>Espace membre</h1>
-        Bienvenue {{ app.user.prenomUser }} sur votre compte !</br>
-
-        {% if is_granted("ROLE_ADMIN") %}
-          <a href="/admin">Vous êtes administrateur, accèder au backoffice? </a></br>
-          {% endif %}
-        <a href="{{ path('account_password') }}">Modifier mon mot de passe </a>
+<div class='img-fond'>
+  <div class="container d-grid">
+	  <div class="p-3">
+		  <div class="row">
+			  <div class="col-6 mt-5 pt-5">
+          <div class="mt-5">
+            <h1>Espace membre</h1></br>
+            <div class="mt-5">
+              <p class="text-justify">
+              Bienvenue {{ app.user.prenomUser|capitalize }} sur votre compte !</br></br></p>
+              <p class="text-justify">
+              {% if is_granted("ROLE_ADMIN") %}
+                <a href="/admin">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewbox="0 0 16 16">
+	                <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
+                  </svg>
+                  Vous êtes administrateur, accéder au backoffice?
+                </a>
+              {% endif %}</br>
+              <a href="{{ path('account_password') }}">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewbox="0 0 16 16">
+	              <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
+                </svg>
+                Modifier mon mot de passe
+              </a></br>
+              <a href="{{ path('app_logout') }}">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewbox="0 0 16 16">
+	            <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
+              </svg>
+              Se déconnecter</a></br></br>
+              </p>
+            </div>
+            <div class="mt-5">
+              <a href="">
+	              <img src="/img/homepage/Logo-ArcheType-gold.png" width="325" alt="logo" class="mb-5">
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- Carte de visite -->
+        <div class="col-6 mt-5">
+          <img src="/img/homepage/carteVisite.png" class="img-fluid mt-5" alt="Responsiveimage">
+        </div>
+      </div>
     </div>
+  </div>
+</div>
 
+<style>
+  .img-fond{
+			background-image: url('/img/homepage/bg.png');
+			width: 100%;
+	}
+  a{
+	  color: #000000;
+    text-decoration : none;
+  }
+  a:hover {
+	  color: #58512e;
+	}
+  .text-justify{
+	  line-height: 2.1;
+	  font-size: 1.2em;
+}
+
+</style>
 {% endblock %}
