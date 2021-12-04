@@ -1,9 +1,11 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Se connecter - ArcheType
-{% endblock %}
+{% block title %}Se connecter - ArcheType{% endblock %}
+
 
 {% block body %}
+
+<link rel="stylesheet" href="{{ asset('css/login.css')}}">
 
 <section class="vh-100 bg-image mt-5" style="background-image: url('/img/homepage/fond.png');">
 	<div class="mask d-flex align-items-center h-100 gradient-custom-3">
@@ -56,40 +58,6 @@
 		</div>
 	</div>
 </section>
-
-	<style>
-		.form-control:focus {
-			border:1px solid #58512e;
-			box-shadow: 0 0 3px #58512e;
-		}
-		.inscription {
-			text-decoration: none;
-		}
-		.gradient-custom-4 {
-			background: #58512e;
-			background: linear-gradient(to right, #d6d5d2, #58512e);
-
-		}
-		.btn{
-			border-style: none;
-			width: 100%;
-		}
-		.button{
-			color: white;
-		}
-		
-		a:hover{
-			color: #58512e;
-		}
-		.card{
-			border-left-style: none;
-			border-bottom-style: none;
-		}
-		#mdp{
-			text-decoration: none;
-		}
-	</style>
-
 
 {% endblock %}
 
