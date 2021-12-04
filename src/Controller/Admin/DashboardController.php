@@ -13,7 +13,9 @@ use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractDashboardController;
 use App\Entity\User;
 use App\Entity\Publication;
 use App\Entity\Projet;
-
+use App\Entity\TypeOffre;
+use App\Entity\Offre;
+use EasyCorp\Bundle\EasyAdminBundle\EasyAdminBundle;
 
 class DashboardController extends AbstractDashboardController
 {
@@ -22,7 +24,13 @@ class DashboardController extends AbstractDashboardController
      */
     public function index(): Response
     {
-        return parent::index();
+
+
+
+        return $this->render('bundles\EasyAdminBundle\welcome.html.twig', [
+            'user' => []
+        ]);
+        //return parent::index();
     }
 
     public function configureDashboard(): Dashboard
@@ -32,16 +40,18 @@ class DashboardController extends AbstractDashboardController
     }
 
     public function configureMenuItems(): iterable
-   {
-   
+    {
+
         yield MenuItem::linkToDashboard('Dashboard', 'fa fa-home');
 
 
-       
-       yield  MenuItem::linkToCrud('Publication', 'fa fa-tag', Publication::class);
-       yield  MenuItem::linkToCrud('Users', 'fa fa-user', User::class);
-       yield  MenuItem::linkToCrud('Projet', 'fa fa-tag', Projet::class);
 
-    
+        yield  MenuItem::linkToCrud('Publication', 'fa fa-tag', Publication::class);
+        yield  MenuItem::linkToCrud('Users', 'fa fa-user', User::class);
+        yield  MenuItem::linkToCrud('Projet', 'fa fa-tag', Projet::class);
+        yield  MenuItem::linkToCrud('Type d\'offre', 'fas fa-cogs', TypeOffre::class);
+        yield  MenuItem::linkToCrud('Offre d\'emploi', 'fas fa-briefcase', Offre::class); //échape le guillement par \
+
+
     }
 }

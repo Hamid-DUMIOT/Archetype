@@ -5,7 +5,8 @@
 {% block body %}
 
 
-<h1 class="text-black">Projet </h1>
+	<h1 class="text-black">Projet
+	</h1>
 
 	<div class="container pt-5 mt-5">
 		{% for projet in projets %}
@@ -36,6 +37,5 @@
 {# display navigation #}
 <div class="d-flex justify-content-center mt-5">
 
-    {{ knp_pagination_render(projets, 'base/pagination.html.twig') }}
-</div>
-{% endblock %}
+	{{ knp_pagination_render(projets, 'base/pagination.html.twig') }}
+</div>{% endblock %}

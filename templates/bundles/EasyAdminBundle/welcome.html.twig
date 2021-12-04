@@ -1,0 +1,26 @@
+{# @var ea \EasyCorp\Bundle\EasyAdminBundle\Context\AdminContext #}
+{% extends '@EasyAdmin/page/content.html.twig' %}
+
+{% block content_title 'Bienvenue sur votre page Administrateur' %}
+
+{% block main %}
+	<style>
+		p {
+			max-width: 600px;
+		}
+	</style>
+
+	<p>
+		<strong>Page de l'administrateur</strong>
+	</p>
+
+	{#<div class="container">
+			<div class="row">
+				<div class="col-6  alert-info">
+					<span>Récup le nb d'user</span>
+				</div>
+				<div class="col-6" alert-info></div>
+			</div>
+		</div>
+	#}
+{% endblock %}
