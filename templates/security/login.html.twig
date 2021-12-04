@@ -30,7 +30,7 @@
 									<input class="form-check-input me-2" type="checkbox" value="" id="form2Example3cg"/>
 									<label class="form-check-label" for="form2Example3g">
 										J'accepte les 
-										<a href="#!" class="text-body">
+										<a href="{{ path('cgu') }}" class="text-body">
 											<u>CGU</u>
 										</a>
 									</label>
@@ -58,6 +58,10 @@
 </section>
 
 	<style>
+		.form-control:focus {
+			border:1px solid #58512e;
+			box-shadow: 0 0 3px #58512e;
+		}
 		.inscription {
 			text-decoration: none;
 		}

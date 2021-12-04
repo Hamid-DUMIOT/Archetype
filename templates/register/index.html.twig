@@ -40,12 +40,10 @@
 							</div>
 							<div class="form-check d-flex justify-content-center mb-5">
 								{{ form_widget(form.agreeTerms, {'attr': {'class': 'form-check-input me-2'}}) }}
-								<label class="form-check-label" for="form2Example3g">
-									J'accepte les
+									&nbsp
 									<a href="/cgu" class="text-body">
 										<u>CGU</u>
 									</a>
-								</label>
 							</div>
 							<div class="d-flex justify-content-center">
 								<input type="submit" value="S'inscrire" id="btnregisterlogin" class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">
@@ -64,9 +62,18 @@
 		</div>
 	</div>
 </section>
+
 	
 
 	<style>
+		.form-check:focus{
+			border:1px solid #58512e;
+			box-shadow: 0 0 3px #58512e;
+		}
+		.form-control:focus {
+			border:2px solid #58512e;
+			box-shadow: 0 0 3px #58512e;
+		}
 		.bg-image{
 			background-image: url('/img/homepage/bg.png');
 			background-size: cover;
@@ -94,3 +101,15 @@
 			text-decoration: none;
 		}
 {% endblock %}
+
+
+
+	
+
+
+
+
+
+
+
+
