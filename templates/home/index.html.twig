@@ -2,9 +2,10 @@
 
 {% block title %}ArcheType{% endblock %}
 
-
 {% block body %}
+
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link rel="stylesheet" href="{{ asset('css/homepage.css')}}">
 
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
@@ -44,27 +45,6 @@
   		top: 30px;
   		z-index: 99;
 	}
-
-	.textCarousel{	overflow: hidden;
-			text-overflow: ellipsis;
-			display: -webkit-box;
-			-webkit-box-orient: vertical;
-			-webkit-line-clamp: 1; /* number of lines to show */
-			line-height: 1.8;        /* fallback */
-			max-height: 1 * 0.5;       /* fallback */
-			font-weight: 300;
-			font-size: 15px;
-			letter-spacing: .05em; 
-			}
-
-			.carousel {
-  width:800px;
-  height: 500px;
-  text-align: center;
-  margin: auto;
-  display :flex;
-  
-}
 </style>
 
 
