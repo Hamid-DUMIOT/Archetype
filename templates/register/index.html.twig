@@ -1,13 +1,96 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Insription - ArcheType{% endblock %}
+{% block title %}Inscription - ArcheType{% endblock %}
 
 {% block body %}
-    <div class="container mt-5 pt-5">
 
-        <h1>S'inscrire</h1>
-            {{ form(form) }}
-            
-    </div>
 
+{% for flashError in app.flashes('verify_email_error') %}
+	<div class="alert alert-danger" role="alert">{{ flashError }}</div>
+{% endfor %}
+
+<section class="vh-100 bg-image mt-5 bt-5">
+	<div class="mask d-flex align-items-center h-100 gradient-custom-3 mt-5 mb-5 pb-5">
+		<div class="container h-100 mt-5 mb-5">
+			<div class="row d-flex justify-content-center align-items-center h-100">
+				<div class="col-12 col-md-9 col-lg-7 col-xl-6 mt-5">
+					<div class="card mb-5" style="border-radius: 15px;">
+						<div class="card-body p-5">
+							<h2 class="text-uppercase text-center mb-5">Créer un compte</h2>
+								{{ form_start(form) }}
+							<div class="form-outline mb-4">
+                                {{ form_widget(form.nomUser, {'attr': {'placeholder': 'Nom',
+                                'class': 'form-control form-control-lg'}}) }}
+							</div>
+							<div class="form-outline mb-4">
+							    {{ form_widget(form.prenomUser, {'attr': {'placeholder': 'Prénom',
+                                'class': 'form-control form-control-lg'}}) }}
+							</div>
+						    <div class="form-outline mb-4">
+							    {{ form_widget(form.email, {'attr': {'placeholder': 'Email',
+                                'class': 'form-control form-control-lg'}}) }}
+							</div>
+							<div class="form-outline mb-4">
+								{{ form_widget(form.password, {'attr': {'placeholder': 'Mot de passe',
+                                'class': 'form-control form-control-lg'}}) }}
+							</div>
+							<div class="form-outline mb-4">
+								{{ form_widget(form.phone, {'attr': {'placeholder': 'Numéro de téléphone',
+                                'class': 'form-control form-control-lg'}}) }}
+							</div>
+							<div class="form-check d-flex justify-content-center mb-5">
+								{{ form_widget(form.agreeTerms, {'attr': {'class': 'form-check-input me-2'}}) }}
+								<label class="form-check-label" for="form2Example3g">
+									J'accepte les
+									<a href="/cgu" class="text-body">
+										<u>CGU</u>
+									</a>
+								</label>
+							</div>
+							<div class="d-flex justify-content-center">
+								<input type="submit" value="S'inscrire" id="btnregisterlogin" class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">
+							</div>
+								<p class="text-center text-muted mt-5 mb-0">Déjà un compte ?
+								<a href="/login" class="fw-bold text-body">
+									<u>Connectez-vous</u>
+								</a>
+								</p>
+								{{ form_end(form) }}
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+	
+
+	<style>
+		.bg-image{
+			background-image: url('/img/homepage/bg.png');
+			background-size: cover;
+		}
+		.gradient-custom-4 {
+			background: #58512e;
+			background: linear-gradient(to right, #d6d5d2, #58512e);
+		}
+		.btn{
+			border-style: none;
+			width: 100%;
+		}
+		.button{
+			color: white;
+		}
+	
+		a:hover{
+			color: #58512e;
+		}
+		.card{
+			border-left-style: none;
+			border-bottom-style: none;
+		}
+		#mdp{
+			text-decoration: none;
+		}
 {% endblock %}

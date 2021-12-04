@@ -27,10 +27,11 @@ class ProjetCrudController extends AbstractCrudController
             TextEditorField::new('descriptionProjet'),
             DateField::new('dateDebut'),
             DateField::new('dateFin'),
-            TextField::new('imageFile')->setFormType(VichImageType::class)->onlyWhenUpdating()->onlyWhenCreating(),
-            ImageField::new('image_projet')->setBasePath('/uploads/projets/')->onlyOnIndex(),
-            SlugField::new('slug')->setTargetFieldName('libelleProjet')->hideOnIndex(),
             AssociationField::new('typeProjet'),
+            TextField::new('imageFile')->setFormType(VichImageType::class)->hideOnIndex(),
+            ImageField::new('image')->setBasePath('/uploads/projets/')->onlyOnIndex(),
+            SlugField::new('slug')->setTargetFieldName('libelleProjet')->hideOnIndex(),
+            
         ];
     
     }

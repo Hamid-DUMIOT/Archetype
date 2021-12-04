@@ -12,6 +12,10 @@ use Symfony\Component\Form\Extension\Core\Type\RepeatedType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\FormTypeInterface;
+use Symfony\Component\Validator\Constraints\IsTrue;
+use Symfony\Component\Validator\Constraints\Length;
+use Symfony\Component\Validator\Constraints\NotBlank;
+use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 
 
 class RegisterType extends AbstractType
@@ -42,9 +46,13 @@ class RegisterType extends AbstractType
             ->add('phone', TextType::class, [
                 'label' => 'Votre numéro'
             ])
-            
-            ->add('submit', SubmitType::class, [
-                'label' => "S'inscrire"
+            ->add('agreeTerms', CheckboxType::class, [
+                'mapped' => false,
+                'constraints' => [
+                    new IsTrue([
+                        'message' => 'You should agree to our terms.',
+                    ]),
+                ],
             ])
             ;
     }

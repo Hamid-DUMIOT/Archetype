@@ -1,0 +1,32 @@
+.Arrow{
+
+    width: 45px;
+    height: 20px;
+    background-size: 100% 100%;
+    margin-top: 35px;
+    
+}
+
+h1,h6{
+    text-align:  center;
+}
+
+.content {
+			
+   
+    display: inline-block;
+     -webkit-box-orient: vertical;
+    line-height: 1.8;        /* fallback */
+    max-height: 3 * 0.5;       /* fallback */
+    
+    font-weight: 300;
+    font-size: 15px;
+    letter-spacing: .05em; 
+    margin-top: 15px;
+}
+
+.border{
+
+    margin-top: 50px;
+    margin-bottom: 100px;
+}

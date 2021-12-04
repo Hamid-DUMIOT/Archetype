@@ -29,8 +29,10 @@ class PublicationController extends AbstractController
         $publications = $paginator->paginate(
             $data, /* query NOT result */
             $request->query->getInt('page', 1), /*page number*/
-            2 /*limit per page*/
+            3 /*limit per page*/
         );
+
+        
 
 
 

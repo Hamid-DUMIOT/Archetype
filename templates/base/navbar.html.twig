@@ -1,4 +1,7 @@
 <!-- Navbar  -->
+
+<link rel="stylesheet" href="{{ asset('css/navbarcss.css')}}">
+
 <nav class="navbar fixed-top navbar-expand-lg navbar-dark p-md-3">
 	<div class="container-fluid">
 		<a class="navbar-brand" href="{{ path('home') }}">
@@ -19,7 +22,7 @@
 					<a class="nav-link text-white" href="{{ path('architecte') }}">Architectes</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link text-white" href="{{ path('publication_index') }}">Actualités</a>
+					<a class="nav-link text-white" href="{{ path('publication_index') }}">Publications</a>
 				</li>
 				<li class="nav-item">
 					<a class="nav-link text-white" href="{{ path('contacts') }}">Contact</a>
@@ -34,13 +37,20 @@
 			</li>
 		</ul>
 	</div>
-</div></nav><!-- transition navbar --><script src="js/bootstrap.bundle.min.js"></script><script type="text/javascript">
+</div>
+</nav>
+
+<!-- transition navbar -->
+
+<script src="js/bootstrap.bundle.min.js"></script>
+<script type="text/javascript">
 var nav = document.querySelector('nav');{% if (show_transparent_navbar is not defined) %}nav.classList.add('bg-dark', 'shadow');
 {% else %}
 window.addEventListener('scroll', function () {
 if (window.pageYOffset > 150) {
 nav.classList.add('bg-dark', 'shadow');
 } else {
-nav.classList.remove('bg-dark', 'shadow');
-}
-});{% endif %}</script>
+nav.classList.remove('bg-dark', 'shadow');}
+});
+{% endif %}
+</script>
