@@ -1,0 +1,89 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Postuler
+{% endblock %}
+
+{% block body %}
+	<div class="container mt-5 pt-5">
+		<h1>
+			Je postule ...
+		</h1>
+		<p>Pour le bonne prise en charge de votre demande, veuillez renseignez les champs suivants</p>
+
+		{{ form_start(postuler_form) }}
+		<div class="row">
+			<div class="col-sm">
+				<div class="form-group">
+
+					{{ form_row(postuler_form.NomPoste, {'attr': {'class': 'form-control', 'placeholder' : 'exemple: secrétaire'}}) }}
+				</div>
+				<div class="form-group">
+
+					{{ form_row(postuler_form.Prenom, {'attr': {'class': 'form-control'}}) }}
+				</div>
+				<div class="form-group">
+					{{ form_row(postuler_form.Email, {'attr': {'class': 'form-control'}}) }}
+
+				</div>
+
+			</div>
+			<div class="col-sm">
+				<div class="form-group">
+					{{ form_row(postuler_form.Nom, {'attr': {'class': 'form-control'}}) }}
+
+				</div>
+				<div class="form-group">
+					{{ form_row(postuler_form.Telephone, {'attr': {'class': 'form-control'}}) }}
+
+				</div>
+				{#<div class="form-group">
+									{{ form_row(postuler_form.files, {'attr': {'class': 'form-control'}}) }}
+				
+								</div>#}
+
+			</div>
+
+
+			<div class="form-group">
+				{{ form_row(postuler_form.Message, {'attr': {'class': 'form-control'}}) }}
+
+			</div>
+
+			<div class="col-md-12 text-center">
+				<div class="centre">
+					<div class="form-group">
+						{{ form_row(postuler_form.Envoyer, {'attr': {'class': 'btn btn-outline-dark'}}) }}
+
+					</div>
+				</div>
+				{#upload de fichier#}
+				<div class="centre">
+					<div class="form-group">
+						{{ form_row(postuler_form.Vider, {'attr': {'class': 'btn btn-outline-dark'}}) }}
+
+					</div>
+				</div>
+			</div>
+
+			{{ form_end(postuler_form) }}
+
+
+			{#{{form(contacts_form) }}#}
+
+		</div>
+	</div>
+
+	<style>
+
+		.centre {
+			margin: 0 auto;
+			padding: 1%;
+			width: 100px;
+		}
+
+		.form-group {
+			margin: 1%;
+		}
+	</style>
+
+{% endblock %}

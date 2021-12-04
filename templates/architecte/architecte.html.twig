@@ -1,0 +1,115 @@
+{% extends 'base.html.twig' %}
+
+
+{% block head %}
+
+	{% block title %}Architectes
+	{% endblock %}
+
+	<meta name="viewport" content="width=device-width , initial-scale=1.0">
+
+{% endblock %}
+
+{% block body %}
+
+
+	<div class="container mt-5 pt-5">
+		<h1>Nos Architectes</h1>
+
+		<div class="row">
+			<div
+				class="col-sm">
+				{# Architecte 1#}
+				<div class="img-txt">
+					<img class="image-ronde" src="\img\architectes\archi1col.png" class="image-ronde">
+
+					<span class="txt">Rayan SOLIS
+					</br>
+					Architecte d'exterieur
+				</span>
+			</div>
+
+			{# Architecte 2#}
+			<div class="img-txt">
+				<img class="image-ronde" src="\img\architectes\archi2col.png" class="image-ronde">
+
+				<span class="txt">Gabriel TATE
+				</br>
+				Architecte d'interieur
+			</span>
+		</span>
+	</div>
+</div>
+
+
+<div
+	class="col-sm">
+
+	{# Architecte 3#}
+	<div class="img-txt">
+		<img class="image-ronde" src="\img\architectes\archi3col.png" class="image-ronde">
+
+		<span class="txt">Hashim KHAN
+		</br>
+		Architecte d'interieur</span>
+</div>
+
+{# Architecte 4#}
+<div class="img-txt">
+	<img class="image-ronde" src="\img\architectes\archi4col.png" class="image-ronde">
+
+	<span class="txt">Rowan MORENO</br>
+	Architecte d'espace publique</span></div></div></div></div><p>Histoire du cabinet</p><style>h1 {
+		text-align: center;
+	}
+
+
+	.image-ronde {
+		width: 90%;
+		border: none;
+		-moz-border-radius: 50%;
+		-webkit-border-radius: 50%;
+		border-radius: 50%;
+	}
+
+	.img-txt {
+		display: grid;
+		margin: 10%;
+		padding-left: 10%;
+
+	}
+
+	/* les enfants se superposent */
+	.img-txt > * {
+		grid-area: 1 / 1/-1/-1;
+		/* raccourci pour grid-row et grid-column */
+	}
+
+	/* le texte */
+	.txt {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+		color: #fff;
+		opacity: 0;
+		filter:invert(0); /* antibug si effet sur img */
+		transition: opacity 0.8s;
+		background: rgba(0, 0, 0, 0.6);
+		width: 90%;
+		border: none;
+		-moz-border-radius: 50%;
+		-webkit-border-radius: 50%;
+		border-radius: 50%;
+	}
+
+
+	/* le survol */
+	.txt:hover {
+		opacity: 1;
+		width: 90%;
+		border: none;
+		-moz-border-radius: 50%;
+		-webkit-border-radius: 50%;
+		border-radius: 50%;
+	}</style>{% endblock %}
