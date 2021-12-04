@@ -49,15 +49,20 @@
 			}
 		
 
+			.arrow{
+				transition: transform 0.3s ease;
+				transform: translateY(0px);
+		  }
+		  .arrow:hover{
+			   transform: translateY(10px);
+		  }
 
-			.Arrow{
-
-				width: 45px;
-				height: 20px;
-				background-size: 100% 100%;
-				margin-top: 35px;
-				transition: 2.5s cubic-bezier(.215,.61,.355,1);
-			}
+		  .arrow svg{
+				up: 8px;
+				position: absolute;
+				top: 30px;
+				z-index: 99;
+		  }
 
 
 			
