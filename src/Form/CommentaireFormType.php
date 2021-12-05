@@ -7,6 +7,7 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 
 class CommentaireFormType extends AbstractType
 {
@@ -16,6 +17,9 @@ class CommentaireFormType extends AbstractType
         ->add('ContenuCom', TextType::class, [
             'label' => 'Envoyer un commentaire ci-dessous',
            
+            ])
+            ->add('Envoyer', SubmitType::class, [
+                'attr' => ['class' => 'btn btn-outline-dark mt-5', 'far icon' => 'paper-plane']
             ]);
 
     }

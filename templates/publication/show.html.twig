@@ -7,6 +7,10 @@
 <link rel="stylesheet" href="{{ asset('css/publication_show.css')}}">
 
 
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
 	<div class="container pt-5 mt-5 text-center" >
 			<h1>{{ publication.titre}}</h1>
 				<span>Publier le</span> <h6>{{ publication.datePub ? publication.datePub|date('Y-m-d') : '' }}</h6>
@@ -37,20 +41,9 @@
 
 
 
+{% include "commentaire/form.html.twig" %}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+{# }
 <div class="container pt-5 mt-5">
 				<div class="text center">
 					<h1>Laissez nous votre Avis !</h1>
@@ -62,6 +55,8 @@
 				{{ form_end(form) }}
 				</div>
 
+
+#}
 	
 	
 
@@ -69,26 +64,28 @@
 
 
 
+<div class="container pt-5 mt-5 text-center" >
 
-			<table class="border" width="100%" align="center">
-				<thead>
-					<tr>
-						<th scope ="col">Numéro</th>
-						<th scope ="col">Commentaire</th>
-					</tr>
-				</thead>
-				<tbody>
-					{% for commentaire in publication.commentaires %}
-						<tr>     
-							<td>{{ commentaire.id }}</td>
-							<td>{{ commentaire.contenuCom |e }}</td>
-						</tr>
-						{% endfor %}
+	<h1>Espace Commentaire </h1>
 
-				</tbody>
-			</table>  
-	
 
+			
+{% for commentaire in publication.commentaires %}
+
+	<div class="text-center">
+				<span>Publier le</span> 
+				<h6>{{ commentaire.dateCom ? commentaire.dateCom|date('Y-m-d') : '' }}</h6>
+			</div>
+				<div class="row">
+      			 	 <div class="col-3"></div>
+						<div class="text-center">
+							<div class = "content">
+								<p>	 {{ commentaire.contenuCom|striptags }}</p>
+							</div>
+						</div>
+					</div>
+				</div>
+		{% endfor %}
 </div>
 
 
