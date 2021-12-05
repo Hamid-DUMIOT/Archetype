@@ -43,14 +43,12 @@ class DashboardController extends AbstractDashboardController
     {
 
         yield MenuItem::linkToDashboard('Dashboard', 'fa fa-home');
-
-
-
-        yield  MenuItem::linkToCrud('Publication', 'fa fa-tag', Publication::class);
         yield  MenuItem::linkToCrud('Users', 'fa fa-user', User::class);
-        yield  MenuItem::linkToCrud('Projet', 'fa fa-tag', Projet::class);
+        yield  MenuItem::linkToCrud('Publication', 'fa fa-tag', Publication::class);
+        yield  MenuItem::linkToCrud('Projet', 'fas fa-building', Projet::class);
         yield  MenuItem::linkToCrud('Type d\'offre', 'fas fa-cogs', TypeOffre::class);
         yield  MenuItem::linkToCrud('Offre d\'emploi', 'fas fa-briefcase', Offre::class); //échape le guillement par \
+
 
 
     }

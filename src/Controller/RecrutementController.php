@@ -2,7 +2,7 @@
 
 namespace App\Controller;
 
-
+use App\Classe\FiltreOffre;
 use App\Entity\Offre;
 use App\Form\PostulerType;
 use Doctrine\ORM\EntityManager;
@@ -13,6 +13,7 @@ use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\Form\Extension\Core\Type\SearchType;
 
 class RecrutementController extends AbstractController
 {
@@ -33,8 +34,12 @@ class RecrutementController extends AbstractController
         $recrutement = $this->entityManager->getRepository(Offre::class)->findAll();
         // dd($recrutement);
 
+        $filtreOffre = new FiltreOffre();
+        $form = $this->createForm(SearchType::class, $filtreOffre);
+
         return $this->render('recrutement/recrutement.html.twig', [
             'recrutement' => $recrutement,
+            'form' => $form->createView()
         ]);
 
         // $description = $this->entityManager->getDescriptionOffre(Offre::class);

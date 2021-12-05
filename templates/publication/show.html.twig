@@ -5,91 +5,69 @@
 
 {% block body %}
 
-<link rel="stylesheet" href="{{ asset('css/publication_show.css')}}">
+	<link rel="stylesheet" href="{{ asset('css/publication_show.css')}}">
 
+	<h1>{{ publication.titre}}</h1>
+	<div class="container pt-5 mt-5 text-center">
 
-	<div class="container pt-5 mt-5 text-center" >
-			<h1>{{ publication.titre}}</h1>
-				<span>Publier le</span> <h6>{{ publication.datePub ? publication.datePub|date('Y-m-d') : '' }}</h6>
-				
-		</h6>	
-				<div class="row">
-      			  <div class="col-3"></div>
-					<div class="img-fluid">
+		<span>Publiée le</span>
+		<h6>{{ publication.datePub ? publication.datePub|date('Y-m-d') : '' }}</h6>
 
-					<img src="{{ vich_uploader_asset(publication,'imageFile') }} " alt"..." class="img-thumbnail">
-			</div>
-					</div>
-						<div class="text-center">
-							<div class = "content">
-								<p>	 {{ publication.contenuPub|striptags }}</p>
-							</div>
-              
-							<div class= "caption">
-				<a href="{{ path('publication_index') }}" class="LienArrow">
-					<img src= "/img/link/left-arrow.png " alt="fleche gauche" class="Arrow"/>
-				</a>
-						</div>
-				</div>
+	</h6>
+	<div class="row">
+		<div class="col-3"></div>
+		<div class="img-fluid">
+
+			<img src="{{ vich_uploader_asset(publication,'imageFile') }} " alt"..." class="img-thumbnail">
+		</div>
 	</div>
+	<div class="text-center">
+		<div class="content">
+			<p>
+				{{ publication.contenuPub|striptags }}</p>
+		</div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+		<div class="caption">
+			<a href="{{ path('publication_index') }}" class="LienArrow">
+				<img src="/img/link/left-arrow.png " alt="fleche gauche" class="Arrow"/>
+			</a>
+		</div>
+	</div>
+</div>
 
 
 <div class="container pt-5 mt-5">
-				<div class="text center">
-					<h1>Laissez nous votre Avis !</h1>
-				</div>
-				{{ form_start(form) }}
-				{{ form_widget(form) }}
-				<div class="text center">
-				<button class="btn">{{ button_label|default('Envoyer') }}</button>
-				{{ form_end(form) }}
-				</div>
+	<div class="text center">
+		<h1>Laissez nous votre Avis !</h1>
+	</div>
+	{{ form_start(form) }}
+	{{ form_widget(form) }}
+	<div class="text center">
+		<button class="btn">{{ button_label|default('Envoyer') }}</button>
+		{{ form_end(form) }}
+	</div>
 
-	
-	
 
 	{# <a href="{{ path('publication_edit', {'id': publication.id}) }}">edit</a> #}
 
 
+	<table class="border" width="100%" align="center">
+		<thead>
+			<tr>
+				<th scope="col">Numéro du commentaire</th>
+				<th scope="col">Commentaire</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for commentaire in publication.commentaires %}
+				<tr>
+					<td>{{ commentaire.id }}</td>
+					<td>{{ commentaire.contenuCom |e }}</td>
+				</tr>
+			{% endfor %}
+
+		</tbody>
+	</table>
 
 
-			<table class="border" width="100%" align="center">
-				<thead>
-					<tr>
-						<th scope ="col">Numéro du commentaire</th>
-						<th scope ="col">Commentaire</th>
-					</tr>
-				</thead>
-				<tbody>
-					{% for commentaire in publication.commentaires %}
-						<tr>     
-							<td>{{ commentaire.id }}</td>
-							<td>{{ commentaire.contenuCom |e }}</td>
-						</tr>
-						{% endfor %}
-
-				</tbody>
-			</table>  
-	
-
-</div>
-
-
-
-{% endblock %}
+</div>{% endblock %}
