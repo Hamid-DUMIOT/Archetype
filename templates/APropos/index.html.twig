@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}A Propos - ArcheType{% endblock %}
+
+{% block body %}
+
+<style>
+    h2{
+        padding-top: 1.5em;
+        padding-bottom: 0.5em;
+    }
+    .img-fond{
+		background-image: url('/img/homepage/bg.png');
+		width: 100%;
+	}
+    p{
+		line-height: 2.1;
+		font-size: 1.2em;
+	}
+</style>
+<div class="img-fond">
+<div class="container d-grid mt-5 pt-5">
+<div class='mt-5'><h1 id="titre">
+	A propos d'ArcheType
+</h1></div>
+<div class="p-3 mb-5">
+	<div class="row">
+		<div class="col-7 mt-5 pt-3">
+            <h2>
+	            Qui sommes-nous?
+            </h2>
+			<p class="text-justify mt-5 mb-5" style="text-indent:4em">
+				ArcheType est un site web pour la cabinet d'architecte du même nom. 
+                Vous pourrez voir nos créations ainsi que vous connecter afin de réaliser un devis en ligne. 
+                De plus, découvrez notre rubrique blog pour lire nos derniers articles. 
+                Enfin, la rubrique offre d'emploi dans laquelle nous publierons 
+                d'éventuelles propositions d'emploi auxquelles vous pourrez postuler via un formulaire.
+			</p>
+		</div>
+		<!-- Carte de visite -->
+		<div class="col-5 mt-5">
+			<img src="/img/homepage/carteVisite.png" class="img-fluid mt-5" alt="Responsiveimage">
+		</div>
+	</div>
+</div>
+
+</div>
+</div>
+
+{% endblock %}

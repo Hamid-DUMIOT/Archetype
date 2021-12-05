@@ -28,9 +28,10 @@ class ContactsType extends AbstractType
 
             ->add('Email', EmailType::class)
 
-            ->add('Telephone', NumberType::class, array(
-                'attr' => ['pattern' => '/^[0-9]{10}$/', 'length' => 10]
-            ))
+            ->add(
+                'Telephone',
+                NumberType::class
+            ) //[0-9]{1,10}[0-9]
 
             ->add('Budget', MoneyType::class, [
                 'required'   => false
@@ -55,7 +56,7 @@ class ContactsType extends AbstractType
             //. \PHP_EOL .
 
             ->add('Vider', ResetType::class, [
-                'attr' => ['class' => 'btn btn-outline-dark', 'justify-content-md-center']
+                'attr' => ['class' => 'btn btn-outline-dark']
             ]);
 
         //  ->getForm();

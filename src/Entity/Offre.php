@@ -7,6 +7,7 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
+
 /**
  * @ORM\Entity(repositoryClass=OffreRepository::class)
  */
@@ -25,9 +26,25 @@ class Offre
     private $nomOffre;
 
     /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $slug;
+
+    /**
      * @ORM\Column(type="date")
      */
     private $dateOffrePub;
+
+    /**
+     * @ORM\ManyToOne(targetEntity=TypeOffre::class, inversedBy="offres")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $typeoffre;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $lieu;
 
     /**
      * @ORM\Column(type="text")
@@ -38,6 +55,9 @@ class Offre
      * @ORM\OneToMany(targetEntity=ReponseOffre::class, mappedBy="offre", orphanRemoval=true)
      */
     private $reponseOffre;
+
+
+
 
     public function __construct()
     {
@@ -111,6 +131,42 @@ class Offre
                 $reponseOffre->setOffre(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getSlug(): ?string
+    {
+        return $this->slug;
+    }
+
+    public function setSlug(string $slug): self
+    {
+        $this->slug = $slug;
+
+        return $this;
+    }
+
+    public function getLieu(): ?string
+    {
+        return $this->lieu;
+    }
+
+    public function setLieu(string $lieu): self
+    {
+        $this->lieu = $lieu;
+
+        return $this;
+    }
+
+    public function getTypeoffre(): ?TypeOffre
+    {
+        return $this->typeoffre;
+    }
+
+    public function setTypeoffre(?TypeOffre $typeoffre): self
+    {
+        $this->typeoffre = $typeoffre;
 
         return $this;
     }

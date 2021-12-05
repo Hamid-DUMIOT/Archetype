@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mot de passe oublié - ArcheType{% endblock %}
+
+{% block body %}
+
+	<link rel="stylesheet" href="{{ asset('css/navbarcss.css')}}">
+
+	<div class="container pt-5 mt-5">
+		<form method="post">
+			<div class="col-8">
+				<h1 class="h3 mb-3 font-weight-normal" id="titre">Réinitialiser mon mot de passe</h1>
+				<label for="inputEmail">Email</label>
+				<input type="email" name="email" id="inputEmail" class="form-control" autocomplete="email" required autofocus>
+			</div>
+
+			<p>Ou souhaitez-vous <a class="connexion" href="{{ path('app_login') }}">vous connecter?</a></p><br/>
+			<button class="btn btn-lg btn-primary btn-sm my-5" type="submit">
+				Confirmer
+			</button>
+
+		</form>
+	</div>
+
+	<style>
+		.connexion {
+			text-decoration: none;
+		}
+	</style>
+
+{% endblock %}

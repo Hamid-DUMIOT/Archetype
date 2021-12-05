@@ -1,8 +1,8 @@
 <!--footer -->
 
 <link rel="stylesheet" href="{{ asset('css/footercss.css')}}">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
 
-<!--<link rel="stylesheet" href="css/bootstrap.min.css"/>-->
 
 <footer class="footer">
 	<div class="container">
@@ -10,41 +10,43 @@
 			<div class="footer-col">
 				<h4>ArcheType</h4>
 				<ul>
-					<li><a href="#">A propos</a></li>
-					<li><a href="#">Mentions légales</a></li>
+					<li><a href="{{ path('à_propos')}}">A propos</a></li>
+					<li><a href="{{ path('mentions_legales')}}">Mentions légales</a></li>
+					<li><a href="{{ path('cgu')}}">Conditions générales</a></li>
 				</ul>
 			</div>
 			<div class="footer-col">
 				<h4>Nos services</h4>
 				<ul>
-					<li><a href="#">Projets</a></li>
-					<li><a href="#">Architectes</a></li>
-					<li><a href="#">Actualités</a></li>
-					<li><a href="#">Devis</a></li>
+					<li><a href="{{ path('projets_index')}}">Projets</a></li>
+					<li><a href="{{ path('architecte')}}">Architectes</a></li>
+					<li><a href="{{ path('publication_index') }}">Publications</a></li>
+					<li><a href="{{ path('contacts')}}">Devis</a></li>
+
 				</ul>
 			</div>
 			<div class="footer-col">
 				<h4>Besoin d'aide?</h4>
 				<ul>
-					<li><a href="{{ path('account') }}">Mon compte</a></li>
-					<li><a href="#">Nous contacter</a></li>
-					<li><a href="{{ path('nous_trouver') }}">Nous Trouver</a></li>
-					<li><a href="{{ path('app_logout') }}">Se deconnecter</a></li>
+					<li><a href="{{path('account')}}">Mon compte</a></li>
+					<li><a href="{{path('contacts') }}">Nous Contacter</a></li>
+					<li><a href="{{path('nous_trouver')}}">Nous Trouver</a></li>
+					<li><a href="{{path('recrutement')}}">Nous Rejoindre</a></li>
 				</ul>
 			</div>
 			<div class="footer-col">
 				<h4>Nous suivre</h4>
 				<div class="social-links">
-					<a href="#">
+					<a href="https://www.facebook.com/">
 						<i class="fab fa-facebook-f"></i>
 					</a>
-					<a href="#">
+					<a href="https://twitter.com/home?lang=fr">
 						<i class="fab fa-twitter"></i>
 					</a>
-					<a href="#">
+					<a href="https://www.instagram.com/?hl=fr">
 						<i class="fab fa-instagram"></i>
 					</a>
-					<a href="#">
+					<a href="https://www.linkedin.com/feed/">
 						<i class="fab fa-linkedin-in"></i>
 					</a>
 				</div>

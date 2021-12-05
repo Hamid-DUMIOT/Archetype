@@ -1,14 +1,14 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}New Publication{% endblock %}
+{% block title %}Création Publication - ArcheType{% endblock %}
 
 {% block body %}
 <div class="container pt-5 mt-5">
 
-    <h1>Create new Publication</h1>
+    <h1>Créer une nouvelle publication</h1>
 
     {{ include('publication/_form.html.twig') }}
 
-    <a href="{{ path('publication_new') }}">back to list</a>
+    <a href="{{ path('publication_new') }}">Revenir à la liste des publications</a>
 </div>
 {% endblock %}

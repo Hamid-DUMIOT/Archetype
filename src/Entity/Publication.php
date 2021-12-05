@@ -2,14 +2,16 @@
 
 namespace App\Entity;
 
-use App\Repository\PublicationRepository;
-use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
+use App\Entity\Commentaire;
 use Doctrine\ORM\Mapping as ORM;
-
+use App\Repository\PublicationRepository;
+use Doctrine\Common\Collections\Collection;
+use Doctrine\Common\Collections\ArrayCollection;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
+use Symfony\Component\HttpFoundation\File\File;
 /**
  * @ORM\Entity(repositoryClass=PublicationRepository::class)
- *
+ *@Vich\Uploadable
  */
 class Publication
 {
@@ -45,9 +47,50 @@ class Publication
      */
     private $image;
 
+    /**
+     * @Vich\UploadableField(mapping="publications_images", fileNameProperty="image")
+     * @var File
+     */
+    private $imageFile;
+
+    /**
+     * @ORM\Column(type="datetime")
+     */
+    private $updateAt;
+
+
+    public function setImageFile(File $image = null)
+    {
+        $this->imageFile = $image;
+
+        // VERY IMPORTANT:
+        // It is required that at least one field changes if you are using Doctrine,
+        // otherwise the event listeners won't be called and the file is lost
+        if ($image) {
+            // if 'updatedAt' is not defined in your entity, use another property
+            $this->updateAt = new \DateTime('now');
+        }
+    }
+
+    public function getImageFile()
+    {
+        return $this->imageFile;
+    }
+
+
     public function getId(): ?int
     {
         return $this->id;
+    }
+
+    public function setImage($image)
+    {
+        $this->image = $image;
+    }
+
+    public function getImage()
+    {
+        return $this->image;
     }
 
     public function getContenuPub(): ?string
@@ -120,15 +163,16 @@ class Publication
         return $this;
     }
 
-    public function getImage(): ?string
+    public function getUpdateAt(): ?\DateTimeInterface
     {
-        return $this->image;
+        return $this->updateAt;
     }
 
-    public function setImage(string $image): self
+    public function setUpdateAt(\DateTimeInterface $updateAt): self
     {
-        $this->image = $image;
+        $this->updateAt = $updateAt;
 
         return $this;
     }
+    
 }

@@ -4,13 +4,15 @@ namespace App\Controller;
 
 use App\Entity\Commentaire;
 use App\Entity\Publication;
-use App\Form\CommentaireFormType;
 use App\Form\PublicationType;
+use App\Form\CommentaireFormType;
 use App\Repository\PublicationRepository;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use App\Service\CommentaireService;
+use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 /**
  * @Route("/publication")
@@ -20,10 +22,24 @@ class PublicationController extends AbstractController
     /**
      * @Route("/", name="publication_index", methods={"GET"})
      */
-    public function index(PublicationRepository $publicationRepository): Response
+    public function index(PublicationRepository $publicationRepository, PaginatorInterface $paginator, Request $request): Response
     {
+
+        $data =$publicationRepository->findAll();
+
+        $publications = $paginator->paginate(
+            $data, /* query NOT result */
+            $request->query->getInt('page', 1), /*page number*/
+            3 /*limit per page*/
+        );
+
+        
+
+
+
+
         return $this->render('publication/index.html.twig', [
-            'publications' => $publicationRepository->findAll(),
+            'publications' => $publications ,
         ]);
     }
 
@@ -53,22 +69,18 @@ class PublicationController extends AbstractController
     /**
      * @Route("/{id}", name="publication_show", methods={"GET" , "POST"})
      */
-    public function show(Request $request, Publication $publication): Response
+    public function show(Request $request, Publication $publication, CommentaireService $commentaireService): Response
     {
 
         $com = new Commentaire();
-        $com->setDateCom(new \DateTime());
-        $com->setPublication($publication);
         $form = $this->createForm(CommentaireFormType::class, $com);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $entityManager = $this->getDoctrine()->getManager();
-
-            $entityManager->persist($com);
-            $entityManager->flush();
-
-            return $this->redirectToRoute('publication_index', [], Response::HTTP_SEE_OTHER);
+            $com= $form->getData();
+            $commentaireService-> persistCommentaire($com, $publication, null);
+           
+            return $this->redirectToRoute('publication_show', ['id' => $publication->getId()], Response::HTTP_SEE_OTHER);
         }
 
 
