@@ -4,7 +4,7 @@
 {% endblock %}
 
 {% block body %}
-
+	<link rel="stylesheet" href="{{ asset('css/show_offre.css')}}">
 	<div class="container mt-5 pt-5">
 		<h1>{{recrutement.nomOffre}}</h1>
 
@@ -30,49 +30,5 @@
 			<a href="{{ path ('postuler')}}" class="btn btn-outline-dark pull-right">Postuler</a>
 		</div>
 	</div>
-	<style>
-		h1 {
-			padding-bottom: 2%;
-			text-align: center;
-		}
 
-		h4 {
-			padding-bottom: 10px;
-		}
-
-
-		.offre-input {
-			margin-right: 10px;
-			margin-top: 20px;
-			color: grey;
-		}
-
-
-		.description-offre {
-			margin-top: 20px;
-			text-align: justify;
-		}
-
-		.btn {
-			margin-top: 20px;
-
-		}
-
-		.text-left {
-			padding: 20px;
-			margin: 20px;
-		}
-
-		.centre {
-			margin: 0 auto;
-			padding: 1%;
-			width: 100px;
-		}
-		/*#cercle {
-			width: 5px;
-			height: 5px;
-			border-radius: 100px;
-			background: black;
-		}*/
-	</style>
 {% endblock %}

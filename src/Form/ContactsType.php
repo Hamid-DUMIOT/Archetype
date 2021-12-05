@@ -3,6 +3,7 @@
 namespace App\Form;
 
 use Symfony\Component\Form\AbstractType;
+use Gregwar\CaptchaBundle\Type\CaptchaType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Validator\Constraints\Length;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -46,6 +47,15 @@ class ContactsType extends AbstractType
                 ]
 
             ])
+
+            ->add(
+                'captcha',
+                CaptchaType::class,
+                [
+                    'required'   => true,
+                    'label' => 'Je ne suis pas un robot : ' //. \PHP_EOL .
+                ]
+            )
 
             ->add('Message', TextareaType::class, ['label' => 'Votre Message'])
 

@@ -12,6 +12,7 @@
 
 {% block body %}
 
+	<link rel="stylesheet" href="{{ asset('css/architecte.css')}}">
 
 	<div class="container mt-5 pt-5">
 		<h1>Nos Architectes</h1>
@@ -23,93 +24,30 @@
 				<div class="img-txt">
 					<img class="image-ronde" src="\img\architectes\archi1col.png" class="image-ronde">
 
-					<span class="txt">Rayan SOLIS
-					</br>
-					Architecte d'exterieur
-				</span>
+					<span class="txt">Rayan SOLIS</br>Architecte Paysagiste</span>
 			</div>
 
 			{# Architecte 2#}
 			<div class="img-txt">
 				<img class="image-ronde" src="\img\architectes\archi2col.png" class="image-ronde">
-
-				<span class="txt">Gabriel TATE
-				</br>
-				Architecte d'interieur
-			</span>
-		</span>
+				<span class="txt">Gabriel TATE</br>Médiateur Architectural</span>
+		</div>
 	</div>
-</div>
 
 
-<div
-	class="col-sm">
+	<div
+		class="col-sm">
 
-	{# Architecte 3#}
+		{# Architecte 3#}
+		<div class="img-txt">
+			<img class="image-ronde" src="\img\architectes\archi5col.png" class="image-ronde">
+
+			<span class="txt">Noor KHAN</br>Architecte d'interieur</span>
+	</div>
+
+	{# Architecte 4#}
 	<div class="img-txt">
-		<img class="image-ronde" src="\img\architectes\archi3col.png" class="image-ronde">
+		<img class="image-ronde" src="\img\architectes\archi4col.png" class="image-ronde">
 
-		<span class="txt">Hashim KHAN
-		</br>
-		Architecte d'interieur</span>
-</div>
-
-{# Architecte 4#}
-<div class="img-txt">
-	<img class="image-ronde" src="\img\architectes\archi4col.png" class="image-ronde">
-
-	<span class="txt">Rowan MORENO</br>
-	Architecte d'espace publique</span></div></div></div></div><p>Histoire du cabinet</p><style>h1 {
-		text-align: center;
-	}
-
-
-	.image-ronde {
-		width: 90%;
-		border: none;
-		-moz-border-radius: 50%;
-		-webkit-border-radius: 50%;
-		border-radius: 50%;
-	}
-
-	.img-txt {
-		display: grid;
-		margin: 10%;
-		padding-left: 10%;
-
-	}
-
-	/* les enfants se superposent */
-	.img-txt > * {
-		grid-area: 1 / 1/-1/-1;
-		/* raccourci pour grid-row et grid-column */
-	}
-
-	/* le texte */
-	.txt {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		text-align: center;
-		color: #fff;
-		opacity: 0;
-		filter:invert(0); /* antibug si effet sur img */
-		transition: opacity 0.8s;
-		background: rgba(0, 0, 0, 0.6);
-		width: 90%;
-		border: none;
-		-moz-border-radius: 50%;
-		-webkit-border-radius: 50%;
-		border-radius: 50%;
-	}
-
-
-	/* le survol */
-	.txt:hover {
-		opacity: 1;
-		width: 90%;
-		border: none;
-		-moz-border-radius: 50%;
-		-webkit-border-radius: 50%;
-		border-radius: 50%;
-	}</style>{% endblock %}
+		<span class="txt">Rowan MORENO</br>Architecte urbaniste</span>
+</div></div></div><div class="container mt-5 pt-5 md-8"><h1>Qui sommes nous ?</h1></br><p>Créé en septembre 2021, ArcheType déploie ses architectes à votre service afin de produire un travail qualitatif de création d’espaces privés ou publics.</p><p>Notre équipe d’architectes compte 4 artistes, dont les domaines d’interventions se diversifient selon vos diverses réclamations : nous savons nous adapter et vous proposer un projet sur-mesure.</p><p>Fonctionnalité, originalité, ergonomie et esthétique fonctionnent alors en synergie afin de combler vos attentes et votre budget.</p><p>Notre créativité et les talents de nos architectes font d’eux des experts dans leur domaine, et permettent ainsi de concevoir des projets de haute qualité. La collaboration étroite entre nos spécialistes renforce ainsi la qualité du projet délivré.</p><p>Nous vous invitons, via la rubrique projet, à mieux découvrir nos œuvres, en découvrant nos traveaux déjà réalisés.</p><p>Pour plus d’informations, contactez-nous via la page de contact afin d’obtenir les réponses à vos questions !</p></div></div>{% endblock %}
