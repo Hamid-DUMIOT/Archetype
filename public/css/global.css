@@ -1,0 +1,11 @@
+@font-face {
+    font-family: telegrafico;
+    src: url("/font/telegrafico.ttf");
+}
+
+#titre{
+    font-family: telegrafico, sans-serif;
+    color : #9c855c;
+    font-size: 400%!important;
+  line-height: 120%!important;
+}

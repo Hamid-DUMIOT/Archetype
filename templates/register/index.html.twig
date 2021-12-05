@@ -3,7 +3,8 @@
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+		
+		<link rel="stylesheet" href="{{asset("css/global.css") }}">
 		<link rel="icon" href="{{asset("/img/Icon.png") }}">
 		<title>
 			{% block title %}Inscription - ArcheType{% endblock %}
@@ -37,7 +38,7 @@
 				<div class="col-12 col-md-9 col-lg-7 col-xl-6 mt-5">
 					<div class="card mb-5" style="border-radius: 15px;">
 						<div class="card-body p-5">
-							<h2 class="text-uppercase text-center mb-5">Créer un compte</h2>
+							<h1 class="text-uppercase text-center mb-5" id="titre">Inscription</h1>
 								{{ form_start(form) }}
 							<div class="form-outline mb-4">
                                 {{ form_widget(form.nomUser, {'attr': {'placeholder': 'Nom',
