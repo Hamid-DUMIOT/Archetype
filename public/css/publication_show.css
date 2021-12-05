@@ -13,12 +13,11 @@ h1,h6{
 
 .content {
 			
-   
+    color: #2D2619;
     display: inline-block;
      -webkit-box-orient: vertical;
     line-height: 1.8;        /* fallback */
     max-height: 3 * 0.5;       /* fallback */
-    
     font-weight: 300;
     font-size: 15px;
     letter-spacing: .05em; 
