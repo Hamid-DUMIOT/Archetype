@@ -3,32 +3,33 @@
 {% block title %}Espace membre - ArcheType{% endblock %}
 
 {% block body %}
+
 <div class='img-fond'>
   <div class="container d-grid">
 	  <div class="p-3">
 		  <div class="row">
 			  <div class="col-6 mt-5 pt-5">
           <div class="mt-5">
-            <h1>Espace membre</h1></br>
+            <h1 id="titre">Espace membre</h1></br>
             <div class="mt-5">
               <p class="text-justify">
               Bienvenue {{ app.user.prenomUser|capitalize }} sur votre compte !</br></br></p>
               <p class="text-justify">
               {% if is_granted("ROLE_ADMIN") %}
-                <a href="/admin">
+                <a href="/admin" id="lien">
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewbox="0 0 16 16">
 	                <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
                   </svg>
                   Vous êtes administrateur, accéder au backoffice?
                 </a>
               {% endif %}</br>
-              <a href="{{ path('account_password') }}">
+              <a href="{{ path('account_password') }}" id="lien">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewbox="0 0 16 16">
 	              <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
                 </svg>
                 Modifier mon mot de passe
               </a></br>
-              <a href="{{ path('app_logout') }}">
+              <a href="{{ path('app_logout') }}" id="lien">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewbox="0 0 16 16">
 	            <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
               </svg>
@@ -56,16 +57,30 @@
 			background-image: url('/img/homepage/bg.png');
 			width: 100%;
 	}
-  a{
-	  color: #000000;
+  #lien{
+    color: #58512e;
     text-decoration : none;
+    transition: all 0.3s ease;
+
   }
-  a:hover {
-	  color: #58512e;
+  #lien:hover {
+	  color: #000000;
+    padding-left: 8px;
 	}
+
   .text-justify{
 	  line-height: 2.1;
 	  font-size: 1.2em;
+}
+.footer-col ul li a{
+	font-size: 16px;
+	text-transform: capitalize;
+	color: #ffffff;
+	text-decoration: none;
+	font-weight: 300;
+	color: #bbbbbb;
+	display: block;
+	transition: all 0.3s ease;
 }
 
 </style>
