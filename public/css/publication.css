@@ -1,15 +1,17 @@
 
-		.TitrePublication {
-			font-family: orpheuspro ,serif;
-			font-style: normal;
-			-webkit-font-smoothing: antialiased;
-			-moz-osx-font-smoothing: grayscale;
-			font-weight: 400;
-			font-size: 43px;
-			letter-spacing: 0.06em;
-			line-height: 1.2;
-			
-		}
+@font-face {
+    font-family: telegrafico;
+    src: url("/font/telegrafico.ttf");
+}
+
+		.titrePublicationsetProjet{
+				font-family: telegrafico, sans-serif;
+				color: #58512e;
+				font-size: 400%!important;
+				line-height: 120%!important;
+					}
+
+
 
 		a{ 
 			color: black;

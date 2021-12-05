@@ -22,8 +22,10 @@
 						</picture>
 					</div>
 						<div class="col-5">
-							<a href="{{ path('publication_show', {'id': publication.id}) }}" class="TitrePublication">
-							{{ publication.titre }}</a>
+							<a href="{{ path('publication_show', {'id': publication.id}) }}">
+							
+							<h1 id="titre2">{{ publication.titre }}</h1>
+							</a>
 							<h6 class = " datePublication" >{{ publication.datePub ? publication.datePub|date('Y-m-d') : '' }}</h6>
 							
 							<div class = "content">
