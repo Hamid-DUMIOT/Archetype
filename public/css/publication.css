@@ -52,14 +52,15 @@
 		
 
 			.arrow{
-				transition: transform 0.3s ease;
-				transform: translateY(0px);
+				transition: all 0.3s ease;
+				transform: scaleX(1);
 		  }
 		  .arrow:hover{
-			   transform: translateY(10px);
+			transform: scaleX(1);
 		  }
 
 		  .arrow svg{
+			color: #58512e;
 				up: 8px;
 				position: absolute;
 				top: 30px;
