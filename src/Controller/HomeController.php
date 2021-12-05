@@ -25,48 +25,20 @@ class HomeController extends AbstractController
      *
      */
 
-  
-
 
     public function index(ProjetRepository $projetRepository): Response
     
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-        $data =$projetRepository->findAll();
 
-        
->>>>>>> develop
+     $data =$projetRepository->findAll();
+
+ 
         return $this->render('home/index.html.twig', [
             'controller_name' => 'HomeController',
             'projets' => $data ,
             
         ]);
-=======
-<<<<<<< HEAD:src/Controller/MainController.php
-        return $this->render('home/index.html.twig');
-    }
 
-
-    /**
-     * @Route("/Inscription/{prenom?Hamid}", name="Inscription",
-     *  methods={"GET","POST"}, host="localhost",
-     * schemes={"http", "https"})
-     */
-    public function Inscription(Request $request)
-    {
-
-        $prenom = $request->get('prenom');
-
-        return $this->render(
-            'home/inscription.html.twig'
-        );
-=======
-        return $this->render('home/index.html.twig', [
-            'controller_name' => 'HomeController',
-        ]);
->>>>>>> develop:src/Controller/HomeController.php
->>>>>>> main
+  
     }
 }
