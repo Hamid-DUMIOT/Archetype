@@ -2,7 +2,7 @@
 
 namespace App\Controller\Admin;
 
-
+use App\Entity\Commentaire;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
@@ -15,6 +15,7 @@ use App\Entity\Publication;
 use App\Entity\Projet;
 use App\Entity\TypeOffre;
 use App\Entity\Offre;
+use App\Entity\TypeProjet;
 use EasyCorp\Bundle\EasyAdminBundle\EasyAdminBundle;
 
 class DashboardController extends AbstractDashboardController
@@ -48,7 +49,8 @@ class DashboardController extends AbstractDashboardController
         yield  MenuItem::linkToCrud('Projet', 'fas fa-building', Projet::class);
         yield  MenuItem::linkToCrud('Type d\'offre', 'fas fa-cogs', TypeOffre::class);
         yield  MenuItem::linkToCrud('Offre d\'emploi', 'fas fa-briefcase', Offre::class); //échape le guillement par \
-
+        yield  MenuItem::linkToCrud('Commentaires', 'fas fa-comment', Commentaire::class);
+        yield  MenuItem::linkToCrud('Type de projet', 'fas fa-cogs', TypeProjet::class);
 
 
     }

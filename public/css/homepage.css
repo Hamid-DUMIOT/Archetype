@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,100&display=swap');
+
+.banner-image {
+	background-image: url('/img/homepage/background.jpg');
+	background-size: cover;
+	}
+.img-fond{
+	background-image: url('/img/homepage/bg.png');
+	width: 100%;
+}
+.text-justify{
+	line-height: 2.1;
+	font-size: 1.2em;
+}
+a{
+	color: #000000;
+	text-decoration : none;
+}
+#lien{
+	transition: all 0.3s ease;
+}
+#lien:hover {
+	color: #58512e;
+	padding-left: 8px;
+	}
+.arrow{
+  	transition: transform 0.3s ease;
+  	transform: translateY(0px);
+	}
+.arrow:hover{
+ 	transform: translateY(10px);
+	}
+.arrow svg{
+  	up: 8px;
+  	position: absolute;
+  	top: 30px;
+  	z-index: 99;
+}  
+#citation{
+	font-family: 'Poppins', sans-serif;
+	color : white;
+	font-size : 250%
+}
+

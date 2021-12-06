@@ -1,9 +1,10 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}{% endblock %}
+{% block title %}Projets - ArcheType{% endblock %}
 
 {% block body %}
 
+<<<<<<< HEAD
 	<link rel="stylesheet" href="{{ asset('css/publication.css')}}">
 
 
@@ -38,17 +39,62 @@
 					<a href="{{ path('projets_show', {'id': projet.id}) }}" class="LienArrow">
 						<img src="/img/link/arrow-right.png " alt="fleche droite" class="Arrow"/>
 					</a>
+=======
+<link rel="stylesheet" href="{{ asset('css/publication.css')}}">
+
+	<div class="container pt-5 mt-5 text-center">
+			<h1 id="titre">Nos projets</h1>
+	</div>
+
+
+			{% for projet in projets %}
+				<div class="row mt-5">
+ 					<div class="col-4"></div>
+					<div class="col-4">
+						<picture>
+  						<source srcset= "{{ vich_uploader_asset(projet,'imageFile') }} " type="image/svg+xml">
+						<img src="{{ vich_uploader_asset(projet,'imageFile') }} " alt"..." class=" img-fluid img-thumbail">
+						</picture>
+					</div>
+					<div class="col-4"></div>
+						<div class="text-center">
+							<a href="{{ path('projets_show', {'id': projet.id}) }}">
+							
+            				 <h1 id ="titre2"> {{ projet.libelleProjet}}</h1></a>
+							<h6>{{ projet.dateDebut ? projet.dateFin|date('Y-m-d') : '' }}</h6>
+							
+							<div class = "content">
+								{{ projet.descriptionProjet|striptags }}
+							</div>
+              
+							<div class=" arrow col-b-5 mb-5">
+								<a href="{{ path('projets_show', {'id': projet.id}) }}" class=>
+								 <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-arrow-right" viewbox="0 0 16 16">
+	              						  <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
+                 				 </svg>
+								</a>
+							</div>
+						</div>
+>>>>>>> develop
 				</div>
 			</div>
 		</div>
 	</div>
 
 
+<<<<<<< HEAD
 {% else %}
 	<tr>
 		<td colspan="4">no records found</td>
 	</tr>
 {% endfor %}
+=======
+    {% else %}
+	      	<tr>
+		       	<td colspan="4">Pas de projets</td>
+	      	</tr>
+	      {% endfor %}
+>>>>>>> develop
 
 {# display navigation #}
 <div class="d-flex justify-content-center mt-5">

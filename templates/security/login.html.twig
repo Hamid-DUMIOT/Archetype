@@ -1,9 +1,11 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Se connecter - ArcheType
-{% endblock %}
+{% block title %}Se connecter - ArcheType{% endblock %}
+
 
 {% block body %}
+
+<link rel="stylesheet" href="{{ asset('css/login.css')}}">
 
 <section class="vh-100 bg-image mt-5" style="background-image: url('/img/homepage/fond.png');">
 	<div class="mask d-flex align-items-center h-100 gradient-custom-3">
@@ -12,7 +14,7 @@
 				<div class="col-12 col-md-9 col-lg-7 col-xl-6">
 					<div class="card" style="border-radius: 15px;">
 						<div class="card-body p-5">
-							<h2 class="text-uppercase text-center mb-5">Se connecter</h2>
+							<h1 class="text-uppercase text-center mb-5" id="titre">Se connecter</h1>
 							<form method="post">
 								{% if error %}
 									<div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
@@ -30,7 +32,7 @@
 									<input class="form-check-input me-2" type="checkbox" value="" id="form2Example3cg"/>
 									<label class="form-check-label" for="form2Example3g">
 										J'accepte les 
-										<a href="#!" class="text-body">
+										<a href="{{ path('cgu') }}" class="text-body">
 											<u>CGU</u>
 										</a>
 									</label>
@@ -56,36 +58,6 @@
 		</div>
 	</div>
 </section>
-
-	<style>
-		.inscription {
-			text-decoration: none;
-		}
-		.gradient-custom-4 {
-			background: #58512e;
-			background: linear-gradient(to right, #d6d5d2, #58512e);
-
-		}
-		.btn{
-			border-style: none;
-			width: 100%;
-		}
-		.button{
-			color: white;
-		}
-		
-		a:hover{
-			color: #58512e;
-		}
-		.card{
-			border-left-style: none;
-			border-bottom-style: none;
-		}
-		#mdp{
-			text-decoration: none;
-		}
-	</style>
-
 
 {% endblock %}
 

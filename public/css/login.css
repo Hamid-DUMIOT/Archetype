@@ -1,0 +1,35 @@
+.form-control:focus {
+	border:1px solid #58512e;
+	box-shadow: 0 0 3px #58512e;
+}
+
+.inscription {
+	text-decoration: none;
+}
+
+.gradient-custom-4 {
+	background: #58512e;
+	background: linear-gradient(to right, #d6d5d2, #58512e);
+}
+
+.btn{
+	border-style: none;
+	width: 100%;
+}
+
+.button{
+	color: white;
+}
+		
+a:hover{
+	color: #58512e;
+}
+
+.card{
+	border-left-style: none;
+	border-bottom-style: none;
+}
+
+#mdp{
+	text-decoration: none;
+}

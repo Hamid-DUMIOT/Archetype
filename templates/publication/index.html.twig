@@ -1,7 +1,7 @@
 {% extends 'base.html.twig' %}
 
+{% block title %}Publications - ArcheType{% endblock %}
 
-{% block title %}{% endblock %}
 {% block body %}
 
 <link rel="stylesheet" href="{{ asset('css/publication.css')}}">
@@ -9,7 +9,7 @@
 	
 	<div class="container pt-5 mt-5 text-center" >
 	
-			<h1> Publication </h1>
+			<h1 id="titre">Publications</h1>
 			</div>
 
 			{% for publication in publications %}
@@ -22,16 +22,20 @@
 						</picture>
 					</div>
 						<div class="col-5">
-							<a href="{{ path('publication_show', {'id': publication.id}) }}" class="TitrePublication">
-							{{ publication.titre }}</a>
+							<a href="{{ path('publication_show', {'id': publication.id}) }}">
+							
+							<h1 id="titre2">{{ publication.titre }}</h1>
+							</a>
 							<h6 class = " datePublication" >{{ publication.datePub ? publication.datePub|date('Y-m-d') : '' }}</h6>
 							
 							<div class = "content">
 								{{ publication.contenuPub|striptags}} 
 						</div>
-							<div class="col-b-5">
-								<a href="{{ path('publication_show', {'id': publication.id}) }}" class="LienArrow">
-								<img src= "/img/link/arrow-right.png " alt="fleche droite" class="Arrow"/>
+							<div class="arrow col-b-5">
+								<a href="{{ path('publication_show', {'id': publication.id}) }}" >
+								  <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-arrow-right" viewbox="0 0 16 16">
+	              						  <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
+                 				 </svg>
 								</a>
 							</div>
 				</div>
@@ -40,7 +44,7 @@
 	
 	{% else %}
 		<tr>
-			<td colspan="4">no records found</td>
+			<td colspan="4">Pas de publications</td>
 		</tr>
 	{% endfor %}
 

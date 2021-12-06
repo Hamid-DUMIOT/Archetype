@@ -9,7 +9,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class CGUController extends AbstractController
 {
     /**
-     * @Route("/cgu", name="c_g_u")
+     * @Route("/cgu", name="cgu")
      */
     public function index(): Response
     {
