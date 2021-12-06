@@ -38,7 +38,7 @@ class PostulerController extends AbstractController
                     'Prenom'  => $postulerFormData['Prenom'], //. \PHP_EOL .
                     'Telephone'  => $postulerFormData['Telephone'], // . \PHP_EOL .
                     'Message'  => $postulerFormData['Message'],
-                    'files' => $postulerFormData['files']
+                  
                 ]);
             $mailer->send($messagePoste);
             return $this->redirectToRoute('home');
