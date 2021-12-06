@@ -1,16 +1,20 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Publications - ArcheType{% endblock %}
+{% block title %}Publications - ArcheType
+{% endblock %}
 
 {% block body %}
 
-<<<<<<< HEAD
 	<link rel="stylesheet" href="{{ asset('css/publication_show.css')}}">
 
-	<h1>{{ publication.titre}}</h1>
-	<div class="container pt-5 mt-5 text-center">
 
-		<span>Publiée le</span>
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+	<div class="container pt-5 mt-5 text-center">
+		<h1 id="titre2">{{ publication.titre}}</h1>
+		<span>Publier le</span>
 		<h6>{{ publication.datePub ? publication.datePub|date('Y-m-d') : '' }}</h6>
 
 	</h6>
@@ -27,61 +31,15 @@
 				{{ publication.contenuPub|striptags }}</p>
 		</div>
 
-		<div class="caption">
-			<a href="{{ path('publication_index') }}" class="LienArrow">
-				<img src="/img/link/left-arrow.png " alt="fleche gauche" class="Arrow"/>
+		<div class="arrow caption">
+			<a href="{{ path('publication_index') }}">
+				<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="black" class="bi bi-arrow-left" viewbox="0 0 16 16">
+					<path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
+				</svg>
 			</a>
 		</div>
 	</div>
 </div>
-
-
-<div class="container pt-5 mt-5">
-	<div class="text center">
-		<h1>Laissez nous votre Avis !</h1>
-	</div>
-	{{ form_start(form) }}
-	{{ form_widget(form) }}
-	<div class="text center">
-		<button class="btn">{{ button_label|default('Envoyer') }}</button>
-		{{ form_end(form) }}
-	</div>
-=======
-<link rel="stylesheet" href="{{ asset('css/publication_show.css')}}">
-
-
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-
-	<div class="container pt-5 mt-5 text-center" >
-			<h1 id="titre2">{{ publication.titre}}</h1>
-				<span>Publier le</span> <h6>{{ publication.datePub ? publication.datePub|date('Y-m-d') : '' }}</h6>
-				
-		</h6>	
-				<div class="row">
-      			  <div class="col-3"></div>
-					<div class="img-fluid">
-
-					<img src="{{ vich_uploader_asset(publication,'imageFile') }} " alt"..." class="img-thumbnail">
-			</div>
-					</div>
-						<div class="text-center">
-							<div class = "content">
-								<p>	 {{ publication.contenuPub|striptags }}</p>
-							</div>
-              
-							<div class= "arrow caption">
-				<a href="{{ path('publication_index') }}" >
-				<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="black" class="bi bi-arrow-left" viewBox="0 0 16 16">
-  <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
-</svg>
-				</a>
-						</div>
-				</div>
-	</div>
-
-
 
 
 {% include "commentaire/form.html.twig" %}
@@ -100,60 +58,11 @@
 
 
 #}
-	
-	
-
-	{# <a href="{{ path('publication_edit', {'id': publication.id}) }}">edit</a> #}
 
 
->>>>>>> develop
-
-<div class="container pt-5 mt-5 text-center" >
-
-<<<<<<< HEAD
-	{# <a href="{{ path('publication_edit', {'id': publication.id}) }}">edit</a> #}
+{# <a href="{{ path('publication_edit', {'id': publication.id}) }}">edit</a> #}
 
 
-	<table class="border" width="100%" align="center">
-		<thead>
-			<tr>
-				<th scope="col">Numéro du commentaire</th>
-				<th scope="col">Commentaire</th>
-			</tr>
-		</thead>
-		<tbody>
-			{% for commentaire in publication.commentaires %}
-				<tr>
-					<td>{{ commentaire.id }}</td>
-					<td>{{ commentaire.contenuCom |e }}</td>
-				</tr>
-			{% endfor %}
-=======
-	<h1>Espace Commentaire </h1>
+	<div class="container pt-5 mt-5 text-center"> <<<<<<<HEAD<tableclass="border"width="100%"align="center"><thead><tr><thscope="col">Numéroducommentaire</th><thscope="col">Commentaire</th></tr></thead><tbody><tr><td>{{commentaire.id}}</td><td>{{commentaire.contenuCom|e}}</td></tr>=======<h1>EspaceCommentaire</h1><divclass="text-center"><span>Publierle</span><h6>{{commentaire.dateCom?commentaire.dateCom|date('Y-m-d'):''}}</h6></div><divclass="row"><divclass="col-3"></div><divclass="text-center"><divclass="content"><p>{{commentaire.contenuCom|striptags}}</p></div></div></div></div></div>>> {# <a href="{{ path('publication_edit', {'id': publication.id}) }}">edit</a> #} {% for commentaire in publication.commentaires %} {% endfor %} {% for commentaire in publication.commentaires %} {% endfor %}>>>>> develop
 
-
-			
-{% for commentaire in publication.commentaires %}
-
-	<div class="text-center">
-				<span>Publier le</span> 
-				<h6>{{ commentaire.dateCom ? commentaire.dateCom|date('Y-m-d') : '' }}</h6>
-			</div>
-				<div class="row">
-      			 	 <div class="col-3"></div>
-						<div class="text-center">
-							<div class = "content">
-								<p>	 {{ commentaire.contenuCom|striptags }}</p>
-							</div>
-						</div>
-					</div>
-				</div>
-		{% endfor %}
-</div>
->>>>>>> develop
-
-		</tbody>
-	</table>
-
-
-</div>{% endblock %}
+</tbody></table></div>{% endblock %}

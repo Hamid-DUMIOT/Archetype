@@ -5,25 +5,20 @@
 
 {% block body %}
 
-<<<<<<< HEAD
 	<link rel="stylesheet" href="{{ asset('css/recrutement.css')}}">
 
 	<div class="container mt-5 pt-5 text-center">
 		<h1>Trouvez le job de vos rêves !</h1>
-=======
-	<div class="container mt-5 pt-5">
-		<h1 id="titre">Trouvez le job de vos rêves !</h1>
->>>>>>> develop
 
 
 		{#
-								<div class="container mt-5 pt-5 col-sm-3 text-center">
-								
-									<h5>Filtrer par type d'offre</h5>
-									{{form(form)}}
-									</div>
-									<div class="container mt-5 pt-5 col-sm- text-center">
-									#}
+										<div class="container mt-5 pt-5 col-sm-3 text-center">
+										
+											<h5>Filtrer par type d'offre</h5>
+											{{form(form)}}
+											</div>
+											<div class="container mt-5 pt-5 col-sm- text-center">
+											#}
 
 		{% for offre in recrutement %}
 			{#<a href="#">#}
