@@ -1,6 +1,6 @@
 # ARCHETYPE
 
-Le projet ArcheType est un site d'un cabinet d'architecte conçu à partir du framework Symfony, ainsi que PHPMyAdmin.
+Le projet ArcheType est un site d'un cabinet d'architecte conçu à partir du framework Symfony.
 
 ## Environnement de développement
 
