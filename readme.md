@@ -1,6 +1,6 @@
-# HAMIDDUMIOT
+# ARCHETYPE
 
-Le projet ArcheType est un site d'un cabinet d'architecte.
+Le projet ArcheType est un site d'un cabinet d'architecte conçu à partir du framework Symfony, ainsi que PHPMyAdmin.
 
 ## Environnement de développement
 
@@ -9,7 +9,6 @@ PHP 8.0.10
 Composer 
 Symfony 5 
 Bases de données : MariaDB (10.4.11)
-
 
 # On peut verifier tout cela avec : symfony check:requirements
 
